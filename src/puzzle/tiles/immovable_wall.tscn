@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cnvuml3g5ki7g"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4jb3m"]
+size = Vector2(8, 8)
+
+[node name="ImmovableWall" type="Sprite2D"]
+modulate = Color(0, 0, 0, 1)
+texture = SubResource("PlaceholderTexture2D_4jb3m")

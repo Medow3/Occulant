@@ -18,6 +18,7 @@ config/icon="res://assets/art/icon.svg"
 [autoload]
 
 GameManager="*res://src/managers/game_manager.gd"
+PuzzleGlobal="*res://src/puzzle/puzzle_global.gd"
 
 [display]
 

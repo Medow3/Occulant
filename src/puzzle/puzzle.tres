@@ -1,0 +1,21 @@
+[gd_resource type="TileSet" load_steps=8 format=3 uid="uid://g6wv2o7kvr8d"]
+
+[ext_resource type="PackedScene" uid="uid://cnvuml3g5ki7g" path="res://src/puzzle/tiles/immovable_wall.tscn" id="1_ypc8p"]
+[ext_resource type="PackedScene" uid="uid://br6gohel8dnek" path="res://src/puzzle/tiles/blood.tscn" id="1_ysxg2"]
+[ext_resource type="PackedScene" uid="uid://cexqea3rb6onl" path="res://src/puzzle/tiles/movable_wall.tscn" id="2_81rax"]
+[ext_resource type="PackedScene" uid="uid://c8xrrlemnuf3e" path="res://src/puzzle/tiles/door.tscn" id="2_jimse"]
+[ext_resource type="PackedScene" uid="uid://dvfog3hgmuf0s" path="res://src/puzzle/tiles/fire.tscn" id="3_jo4lt"]
+[ext_resource type="PackedScene" uid="uid://bddhq8cxeyarc" path="res://src/puzzle/tiles/garlic.tscn" id="4_km003"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_d28hc"]
+resource_name = "Immovable Walls"
+scenes/0/scene = ExtResource("1_ysxg2")
+scenes/1/scene = ExtResource("2_jimse")
+scenes/2/scene = ExtResource("3_jo4lt")
+scenes/3/scene = ExtResource("4_km003")
+scenes/4/scene = ExtResource("1_ypc8p")
+scenes/5/scene = ExtResource("2_81rax")
+
+[resource]
+tile_size = Vector2i(8, 8)
+sources/0 = SubResource("TileSetScenesCollectionSource_d28hc")

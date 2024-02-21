@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://cexqea3rb6onl"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4jb3m"]
+size = Vector2(8, 8)
+
+[node name="MovableWall" type="Sprite2D"]
+modulate = Color(0.258824, 0.447059, 0.180392, 1)
+texture = SubResource("PlaceholderTexture2D_4jb3m")

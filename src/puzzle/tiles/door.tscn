@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://c8xrrlemnuf3e"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4jb3m"]
+size = Vector2(8, 8)
+
+[node name="Door" type="Sprite2D"]
+modulate = Color(0.145098, 0.662745, 0.741176, 1)
+texture = SubResource("PlaceholderTexture2D_4jb3m")

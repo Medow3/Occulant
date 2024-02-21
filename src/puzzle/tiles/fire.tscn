@@ -1,0 +1,8 @@
+[gd_scene load_steps=2 format=3 uid="uid://dvfog3hgmuf0s"]
+
+[sub_resource type="PlaceholderTexture2D" id="PlaceholderTexture2D_4jb3m"]
+size = Vector2(8, 8)
+
+[node name="Fire" type="Sprite2D"]
+modulate = Color(0.486275, 0.462745, 0.156863, 1)
+texture = SubResource("PlaceholderTexture2D_4jb3m")
