@@ -1,12 +1,15 @@
-[gd_scene load_steps=4 format=3 uid="uid://cdpcdj7s5841v"]
+[gd_scene load_steps=6 format=3 uid="uid://cdpcdj7s5841v"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_br3ru"]
 [ext_resource type="Texture2D" uid="uid://uimhuxsogttm" path="res://assets/art/player/player_temp.png" id="2_x26oj"]
+[ext_resource type="PackedScene" uid="uid://6sk62m067x3" path="res://src/UI/ui.tscn" id="3_umkpr"]
+[ext_resource type="Texture2D" uid="uid://b4bxn3nbyfled" path="res://assets/art/icon.svg" id="3_weotg"]
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mfd7n"]
 size = Vector2(3, 6)
 
 [node name="Player" type="CharacterBody2D"]
+position = Vector2(4, 4)
 script = ExtResource("1_br3ru")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
@@ -19,3 +22,42 @@ texture = ExtResource("2_x26oj")
 [node name="Camera2D" type="Camera2D" parent="."]
 
 [node name="UICanvasLayer" type="CanvasLayer" parent="Camera2D"]
+
+[node name="Ui" parent="Camera2D/UICanvasLayer" instance=ExtResource("3_umkpr")]
+
+[node name="mirror_line" type="Line2D" parent="."]
+points = PackedVector2Array(0, 44, 0, -44)
+width = 1.0
+default_color = Color(1, 1, 1, 0.447059)
+
+[node name="debug_corner_sprite1" type="Sprite2D" parent="."]
+visible = false
+z_index = 2
+scale = Vector2(0.0234375, 0.0195313)
+texture = ExtResource("3_weotg")
+
+[node name="debug_corner_sprite2" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(1, 0, 0, 1)
+z_index = 2
+scale = Vector2(0.0234375, 0.0195313)
+texture = ExtResource("3_weotg")
+
+[node name="debug_corner_sprite3" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.933333, 1, 0, 1)
+z_index = 2
+scale = Vector2(0.0234375, 0.0195313)
+texture = ExtResource("3_weotg")
+
+[node name="debug_corner_sprite4" type="Sprite2D" parent="."]
+visible = false
+modulate = Color(0.235294, 1, 0, 1)
+z_index = 2
+scale = Vector2(0.0234375, 0.0195313)
+texture = ExtResource("3_weotg")
+
+[node name="Polygon2D" type="Polygon2D" parent="."]
+visible = false
+color = Color(0.352941, 0.47451, 0.839216, 0.172549)
+polygon = PackedVector2Array(-44, -44, 44, -44, 44, 44, -44, 44)
