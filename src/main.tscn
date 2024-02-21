@@ -1,3 +1,38 @@
-[gd_scene format=3 uid="uid://b86gw6knhbfx7"]
+[gd_scene load_steps=5 format=3 uid="uid://b86gw6knhbfx7"]
+
+[ext_resource type="Texture2D" uid="uid://bnyjr2nrf4stc" path="res://assets/art/tilesets/temp_tilemap.png" id="1_rm5yv"]
+[ext_resource type="PackedScene" uid="uid://cdpcdj7s5841v" path="res://src/player/player.tscn" id="2_fvg6g"]
+
+[sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_enrah"]
+texture = ExtResource("1_rm5yv")
+texture_region_size = Vector2i(8, 8)
+0:0/0 = 0
+0:0/0/z_index = 1
+0:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:0/0/physics_layer_0/angular_velocity = 0.0
+0:0/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+1:0/0 = 0
+1:0/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:0/0/physics_layer_0/angular_velocity = 0.0
+0:1/0 = 0
+0:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+0:1/0/physics_layer_0/angular_velocity = 0.0
+1:1/0 = 0
+1:1/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+1:1/0/physics_layer_0/angular_velocity = 0.0
+
+[sub_resource type="TileSet" id="TileSet_a8485"]
+tile_size = Vector2i(8, 8)
+physics_layer_0/collision_layer = 1
+terrain_set_0/mode = 0
+sources/0 = SubResource("TileSetAtlasSource_enrah")
 
 [node name="Main" type="Node2D"]
+
+[node name="TileMap" type="TileMap" parent="."]
+tile_set = SubResource("TileSet_a8485")
+format = 2
+layer_0/tile_data = PackedInt32Array(0, 0, 0, 65536, 0, 0, 131072, 0, 0, 196608, 0, 0, 262144, 0, 0, 327680, 0, 0, 1, 0, 0, 65537, 65536, 0, 131073, 65536, 0, 196609, 65536, 0, 262145, 65536, 0, 327681, 0, 0, 2, 0, 0, 65538, 65536, 0, 131074, 65536, 0, 196610, 65536, 0, 262146, 65536, 0, 327682, 0, 0, 3, 0, 0, 65539, 65536, 0, 131075, 65536, 0, 196611, 65536, 0, 262147, 65536, 0, 327683, 0, 0, 4, 0, 0, 65540, 65536, 0, 131076, 65536, 0, 196612, 65536, 0, 262148, 65536, 0, 327684, 0, 0, 5, 0, 0, 65541, 65536, 0, 131077, 65536, 0, 196613, 65536, 0, 262149, 65536, 0, 327685, 0, 0, 6, 0, 0, 65542, 65536, 0, 131078, 65536, 0, 196614, 65536, 0, 262150, 65536, 0, 327686, 0, 0, 7, 0, 0, 65543, 65536, 0, 131079, 65536, 0, 196615, 65536, 0, 262151, 65536, 0, 327687, 0, 0, 8, 0, 0, 65544, 65536, 0, 131080, 65536, 0, 196616, 65536, 0, 262152, 65536, 0, 327688, 0, 0, 9, 0, 0, 65545, 65536, 0, 131081, 65536, 0, 196617, 65536, 0, 262153, 65536, 0, 327689, 0, 0, 10, 0, 0, 65546, 65536, 0, 131082, 65536, 0, 196618, 65536, 0, 262154, 65536, 0, 327690, 0, 0, 11, 0, 0, 65547, 0, 0, 131083, 0, 0, 196619, 0, 0, 262155, 0, 0, 327691, 0, 0, 12, 0, 0, 65548, 65536, 0, 131084, 65536, 0, 196620, 65536, 0, 262156, 65536, 0, 327692, 0, 0, 13, 0, 0, 65549, 65536, 0, 131085, 65536, 0, 196621, 65536, 0, 262157, 65536, 0, 327693, 0, 0, 14, 0, 0, 65550, 65536, 0, 131086, 65536, 0, 196622, 65536, 0, 262158, 65536, 0, 327694, 0, 0, 15, 0, 0, 65551, 0, 0, 131087, 0, 0, 196623, 0, 0, 262159, 0, 0, 327695, 0, 0)
+
+[node name="Player" parent="." instance=ExtResource("2_fvg6g")]
+position = Vector2(22, 29)
