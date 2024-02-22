@@ -26,6 +26,7 @@ texture = ExtResource("2_x26oj")
 [node name="Ui" parent="Camera2D/UICanvasLayer" instance=ExtResource("3_umkpr")]
 
 [node name="mirror_line" type="Line2D" parent="."]
+visible = false
 z_index = 2
 points = PackedVector2Array(0, 44, 0, -44)
 width = 1.0
