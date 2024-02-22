@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://6sk62m067x3"]
+[gd_scene load_steps=3 format=3 uid="uid://6sk62m067x3"]
 
 [ext_resource type="Script" path="res://src/UI/ui.gd" id="1_2lill"]
+[ext_resource type="Texture2D" uid="uid://cs7vv2vnxw2l6" path="res://assets/art/items/mirror_item.png" id="2_xlmjg"]
 
 [node name="Ui" type="Control"]
 layout_mode = 3
@@ -11,10 +12,21 @@ grow_horizontal = 2
 grow_vertical = 2
 script = ExtResource("1_2lill")
 
-[node name="mirrors_in_inventory" type="Label" parent="."]
+[node name="HBoxContainer" type="HBoxContainer" parent="."]
 layout_mode = 0
-offset_right = 15.0
+offset_left = 3.0
+offset_right = 43.0
 offset_bottom = 12.0
-theme_override_font_sizes/font_size = 8
+theme_override_constants/separation = 1
+
+[node name="mirror_texture" type="TextureRect" parent="HBoxContainer"]
+custom_minimum_size = Vector2(8, 8)
+layout_mode = 2
+texture = ExtResource("2_xlmjg")
+stretch_mode = 3
+
+[node name="mirrors_in_inventory" type="Label" parent="HBoxContainer"]
+layout_mode = 2
+theme_override_font_sizes/font_size = 6
 text = "1"
 horizontal_alignment = 1

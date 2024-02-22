@@ -1,7 +1,7 @@
 class_name UI extends Control
 
 
-@onready var mirrors_left_label = $mirrors_in_inventory
+@onready var mirrors_left_label = $HBoxContainer/mirrors_in_inventory
 
 
 func _ready():

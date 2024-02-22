@@ -1,0 +1,59 @@
+[gd_scene load_steps=2 format=3 uid="uid://deefokgn75pnd"]
+
+[ext_resource type="Script" path="res://src/managers/sound_fx.gd" id="1"]
+
+[node name="sound_fx" type="Node"]
+process_mode = 3
+script = ExtResource("1")
+
+[node name="audio_players" type="Node" parent="."]
+
+[node name="AudioStreamPlayer1" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer2" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer3" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer4" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer5" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer6" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer7" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer8" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer9" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer10" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer11" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer12" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer13" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer14" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer15" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer16" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer17" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer18" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer19" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer20" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer21" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer22" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer23" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer24" type="AudioStreamPlayer" parent="audio_players"]
+
+[node name="AudioStreamPlayer25" type="AudioStreamPlayer" parent="audio_players"]

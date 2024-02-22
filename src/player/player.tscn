@@ -1,13 +1,219 @@
-[gd_scene load_steps=29 format=3 uid="uid://cdpcdj7s5841v"]
+[gd_scene load_steps=49 format=3 uid="uid://cdpcdj7s5841v"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_br3ru"]
+[ext_resource type="Script" path="res://src/resources/SFX/single_SFX_data.gd" id="2_aeo80"]
+[ext_resource type="Script" path="res://src/resources/SFX/SFX_data.gd" id="2_c6n6l"]
 [ext_resource type="Texture2D" uid="uid://uimhuxsogttm" path="res://assets/art/player/player_temp.png" id="2_x26oj"]
+[ext_resource type="AudioStream" uid="uid://bt7dopbj48li5" path="res://assets/sfx/reflect_mechanic/mirror_flip_1.ogg" id="3_6acn2"]
 [ext_resource type="PackedScene" path="res://src/tools/screen_shaker.tscn" id="3_odial"]
 [ext_resource type="PackedScene" uid="uid://6sk62m067x3" path="res://src/UI/ui.tscn" id="3_umkpr"]
 [ext_resource type="Texture2D" uid="uid://c6bhpoq7jmbfj" path="res://assets/art/white_square.png" id="4_bn2n5"]
+[ext_resource type="AudioStream" uid="uid://eefpsx5lx4v0" path="res://assets/sfx/reflect_mechanic/mirror_flip_2.ogg" id="4_nfy23"]
+[ext_resource type="AudioStream" uid="uid://cnfeus8ywxmnm" path="res://assets/sfx/reflect_mechanic/mirror_flip_3.ogg" id="5_77fqf"]
+[ext_resource type="AudioStream" uid="uid://dp1jfywls51ix" path="res://assets/sfx/reflect_mechanic/mirror_flip_4.ogg" id="6_u7i3s"]
 [ext_resource type="Script" path="res://src/tools/animation_handler.gd" id="6_x5mn7"]
+[ext_resource type="AudioStream" uid="uid://c1ofgdblmbycf" path="res://assets/sfx/reflect_mechanic/mirror_flip_5.ogg" id="7_foi0v"]
 [ext_resource type="Texture2D" uid="uid://h12boshmgkyi" path="res://assets/art/asset_packs/Minifantasy_Dungeon_v2.2_Free_Version/Minifantasy_Dungeon_Assets/Characters/Human/Walk.png" id="7_q72qs"]
+[ext_resource type="AudioStream" uid="uid://f1t6yesdgtok" path="res://assets/sfx/reflect_mechanic/mirror_flip_6.ogg" id="8_f8qjs"]
 [ext_resource type="Texture2D" uid="uid://ckb7q4bh1hytt" path="res://assets/art/asset_packs/Minifantasy_Dungeon_v2.2_Free_Version/Minifantasy_Dungeon_Assets/Characters/Human/Idle.png" id="8_ujmx4"]
+[ext_resource type="AudioStream" uid="uid://b8wnpwp6t62co" path="res://assets/sfx/reflect_mechanic/mirror_flip_7.ogg" id="9_nnu3u"]
+[ext_resource type="AudioStream" uid="uid://pp171rapy2ps" path="res://assets/sfx/footstep_test2.ogg" id="11_n8pwi"]
+
+[sub_resource type="Resource" id="Resource_xodp2"]
+script = ExtResource("2_aeo80")
+sound_file = ExtResource("3_6acn2")
+pitch_scale = 1.0
+pitch_random = 0.1
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_nuo4i"]
+script = ExtResource("2_aeo80")
+sound_file = ExtResource("4_nfy23")
+pitch_scale = 1.0
+pitch_random = 0.1
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_2osva"]
+script = ExtResource("2_aeo80")
+sound_file = ExtResource("5_77fqf")
+pitch_scale = 1.0
+pitch_random = 0.1
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_7v6m1"]
+script = ExtResource("2_aeo80")
+sound_file = ExtResource("6_u7i3s")
+pitch_scale = 1.0
+pitch_random = 0.1
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_tv5d4"]
+script = ExtResource("2_aeo80")
+sound_file = ExtResource("7_foi0v")
+pitch_scale = 1.0
+pitch_random = 0.1
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_fyax6"]
+script = ExtResource("2_aeo80")
+sound_file = ExtResource("8_f8qjs")
+pitch_scale = 1.0
+pitch_random = 0.1
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_h1ey1"]
+script = ExtResource("2_aeo80")
+sound_file = ExtResource("9_nnu3u")
+pitch_scale = 1.0
+pitch_random = 0.1
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_a6o6b"]
+script = ExtResource("2_c6n6l")
+SFX_pool = Array[ExtResource("2_aeo80")]([SubResource("Resource_xodp2"), SubResource("Resource_nuo4i"), SubResource("Resource_2osva"), SubResource("Resource_7v6m1"), SubResource("Resource_tv5d4"), SubResource("Resource_fyax6"), SubResource("Resource_h1ey1")])
+SFX_pool_weights = Array[float]([1.0, 1.0, 1.0, 1.0, 1.0, 1.0, 1.0])
+prevent_same_sound_twice_in_a_row = true
+
+[sub_resource type="Resource" id="Resource_jdv1j"]
+script = ExtResource("2_aeo80")
+sound_file = ExtResource("11_n8pwi")
+pitch_scale = 1.0
+pitch_random = 0.2
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_lxrag"]
+script = ExtResource("2_c6n6l")
+SFX_pool = Array[ExtResource("2_aeo80")]([SubResource("Resource_jdv1j")])
+SFX_pool_weights = Array[float]([1.0])
+prevent_same_sound_twice_in_a_row = true
 
 [sub_resource type="RectangleShape2D" id="RectangleShape2D_mfd7n"]
 size = Vector2(5, 6)
@@ -139,6 +345,23 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_play_footstep_sfx"
+}, {
+"args": [],
+"method": &"_play_footstep_sfx"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_3hx0h"]
 resource_name = "walk_up"
@@ -203,6 +426,23 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_play_footstep_sfx"
+}, {
+"args": [],
+"method": &"_play_footstep_sfx"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_k6hso"]
@@ -269,6 +509,23 @@ tracks/4/keys = {
 "update": 0,
 "values": [Vector2(1, 1)]
 }
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_play_footstep_sfx"
+}, {
+"args": [],
+"method": &"_play_footstep_sfx"
+}]
+}
 
 [sub_resource type="Animation" id="Animation_ossuk"]
 resource_name = "walk_down"
@@ -333,6 +590,23 @@ tracks/4/keys = {
 "transitions": PackedFloat32Array(1),
 "update": 0,
 "values": [Vector2(1, 1)]
+}
+tracks/5/type = "method"
+tracks/5/imported = false
+tracks/5/enabled = true
+tracks/5/path = NodePath("..")
+tracks/5/interp = 1
+tracks/5/loop_wrap = true
+tracks/5/keys = {
+"times": PackedFloat32Array(0, 0.2),
+"transitions": PackedFloat32Array(1, 1),
+"values": [{
+"args": [],
+"method": &"_play_footstep_sfx"
+}, {
+"args": [],
+"method": &"_play_footstep_sfx"
+}]
 }
 
 [sub_resource type="Animation" id="Animation_wq4wj"]
@@ -536,6 +810,8 @@ graph_offset = Vector2(-314, -27)
 [node name="Player" type="CharacterBody2D"]
 position = Vector2(4, 4)
 script = ExtResource("1_br3ru")
+reflection_sfx = SubResource("Resource_a6o6b")
+footstep_sfx = SubResource("Resource_lxrag")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
@@ -555,6 +831,7 @@ camera = NodePath("..")
 [node name="UICanvasLayer" type="CanvasLayer" parent="Camera2D"]
 
 [node name="Ui" parent="Camera2D/UICanvasLayer" instance=ExtResource("3_umkpr")]
+visible = false
 
 [node name="mirror_line" type="Line2D" parent="."]
 visible = false

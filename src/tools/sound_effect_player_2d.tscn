@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://dfeummhpulkk1"]
+
+[ext_resource type="Script" path="res://src/tools/sound_effect_player_2d.gd" id="1"]
+
+[node name="sound_effect_player_2d" type="Node2D"]
+script = ExtResource("1")

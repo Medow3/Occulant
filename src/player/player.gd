@@ -4,6 +4,8 @@ signal about_to_reflect
 
 @export var tilemap: TileMap
 @export var reflection_tile_distance: int = 5
+@export var reflection_sfx: SFXData
+@export var footstep_sfx: SFXData
 
 @onready var mirror_line: Line2D = $mirror_line
 @onready var square: Sprite2D = $square
@@ -51,6 +53,8 @@ func update_reflection_preview() -> void:
 		var reflection_direction: Vector2 = facing_direction
 		reflection_direction.x = sign(round(reflection_direction.x))
 		reflection_direction.y = sign(round(reflection_direction.y))
+		if reflection_direction.x != 0 and reflection_direction.y != 0:
+			reflection_direction.y = 0
 		
 		mirror_line.visible = true
 		var player_map_grid_cords: Vector2i = tilemap.local_to_map(global_position)
@@ -65,6 +69,7 @@ func update_reflection_preview() -> void:
 
 func reflect() -> void:
 	emit_signal("about_to_reflect")
+	SFX.play_sfx(reflection_sfx)
 	var facing_axis: Vector2 = facing_direction
 	facing_axis.x = round(facing_axis.x)
 	facing_axis.y = round(facing_axis.y)
@@ -177,3 +182,7 @@ func get_reflected_pattern_coords(coord: Vector2i, top_left: Vector2i, bottom_ri
 	normalized_reflected_coord = abs(normalized_coord - reflection_vector)
 	
 	return normalized_reflected_coord
+
+
+func _play_footstep_sfx() -> void:
+	SFX.play_sfx(footstep_sfx)
