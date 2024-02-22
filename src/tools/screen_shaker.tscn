@@ -1,0 +1,14 @@
+[gd_scene load_steps=2 format=3 uid="uid://boenxo84k7wjn"]
+
+[ext_resource type="Script" path="res://src/tools/screen_shaker.gd" id="1"]
+
+[node name="screen_shaker" type="Node"]
+script = ExtResource("1")
+
+[node name="frequency" type="Timer" parent="."]
+
+[node name="duration" type="Timer" parent="."]
+one_shot = true
+
+[connection signal="timeout" from="frequency" to="." method="_on_frequency_timeout"]
+[connection signal="timeout" from="duration" to="." method="_on_duration_timeout"]

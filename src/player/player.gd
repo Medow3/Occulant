@@ -7,6 +7,7 @@ signal about_to_reflect
 
 @onready var mirror_line: Line2D = $mirror_line
 @onready var square: Sprite2D = $square
+@onready var animation_handler = $animation_handler
 
 const SPEED = 100.0
 
@@ -23,6 +24,10 @@ func _physics_process(delta):
 	
 	if input_direction != Vector2.ZERO:
 		facing_direction = input_direction.normalized()
+		animation_handler.travel_to_with_blend("walk", facing_direction)
+	else:
+		animation_handler.travel_to_with_blend("idle", facing_direction)
+		
 	
 	if Input.is_action_just_pressed("Reflect"):
 		if GameManager.get_number_of_mirrors_in_inventory() > 0:
