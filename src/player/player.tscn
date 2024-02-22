@@ -1,4 +1,4 @@
-[gd_scene load_steps=49 format=3 uid="uid://cdpcdj7s5841v"]
+[gd_scene load_steps=59 format=3 uid="uid://cdpcdj7s5841v"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_br3ru"]
 [ext_resource type="Script" path="res://src/resources/SFX/single_SFX_data.gd" id="2_aeo80"]
@@ -18,6 +18,9 @@
 [ext_resource type="Texture2D" uid="uid://ckb7q4bh1hytt" path="res://assets/art/asset_packs/Minifantasy_Dungeon_v2.2_Free_Version/Minifantasy_Dungeon_Assets/Characters/Human/Idle.png" id="8_ujmx4"]
 [ext_resource type="AudioStream" uid="uid://b8wnpwp6t62co" path="res://assets/sfx/reflect_mechanic/mirror_flip_7.ogg" id="9_nnu3u"]
 [ext_resource type="AudioStream" uid="uid://pp171rapy2ps" path="res://assets/sfx/footstep_test2.ogg" id="11_n8pwi"]
+[ext_resource type="AudioStream" uid="uid://ct7vkvaoo1d0n" path="res://assets/sfx/reflect_mechanic/mirror_view_loop.ogg" id="12_57xky"]
+[ext_resource type="AudioStream" uid="uid://drauu8wt33mem" path="res://assets/sfx/reflect_mechanic/mirror_view_start.ogg" id="13_e6x2h"]
+[ext_resource type="TileSet" uid="uid://domg58cay67u3" path="res://src/resources/preview_tileset.tres" id="19_r0xtv"]
 
 [sub_resource type="Resource" id="Resource_xodp2"]
 script = ExtResource("2_aeo80")
@@ -212,6 +215,64 @@ panning_strength = 1.0
 [sub_resource type="Resource" id="Resource_lxrag"]
 script = ExtResource("2_c6n6l")
 SFX_pool = Array[ExtResource("2_aeo80")]([SubResource("Resource_jdv1j")])
+SFX_pool_weights = Array[float]([1.0])
+prevent_same_sound_twice_in_a_row = true
+
+[sub_resource type="Resource" id="Resource_gaprq"]
+script = ExtResource("2_aeo80")
+sound_file = ExtResource("12_57xky")
+pitch_scale = 1.0
+pitch_random = 0.0
+use_custom_sfx_volume = true
+custom_volume = -17.183
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.2
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_d02d2"]
+script = ExtResource("2_c6n6l")
+SFX_pool = Array[ExtResource("2_aeo80")]([SubResource("Resource_gaprq")])
+SFX_pool_weights = Array[float]([1.0])
+prevent_same_sound_twice_in_a_row = true
+
+[sub_resource type="Resource" id="Resource_1aur3"]
+script = ExtResource("2_aeo80")
+sound_file = ExtResource("13_e6x2h")
+pitch_scale = 1.0
+pitch_random = 0.0
+use_custom_sfx_volume = true
+custom_volume = -16.435
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_thhhm"]
+script = ExtResource("2_c6n6l")
+SFX_pool = Array[ExtResource("2_aeo80")]([SubResource("Resource_1aur3")])
 SFX_pool_weights = Array[float]([1.0])
 prevent_same_sound_twice_in_a_row = true
 
@@ -798,6 +859,13 @@ blend_point_3/node = SubResource("AnimationNodeAnimation_rptfh")
 blend_point_3/pos = Vector2(0, 1)
 blend_mode = 1
 
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_30jhc"]
+advance_mode = 2
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_hiwrf"]
+
+[sub_resource type="AnimationNodeStateMachineTransition" id="AnimationNodeStateMachineTransition_2evrt"]
+
 [sub_resource type="AnimationNodeStateMachine" id="AnimationNodeStateMachine_owfg3"]
 states/End/position = Vector2(940, 116)
 states/Start/position = Vector2(207, 116)
@@ -805,6 +873,7 @@ states/idle/node = SubResource("AnimationNodeBlendSpace2D_x2e5k")
 states/idle/position = Vector2(404, 105)
 states/walk/node = SubResource("AnimationNodeBlendSpace2D_wj8jd")
 states/walk/position = Vector2(684, 116)
+transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_30jhc"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_hiwrf"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_2evrt")]
 graph_offset = Vector2(-314, -27)
 
 [node name="Player" type="CharacterBody2D"]
@@ -812,6 +881,8 @@ position = Vector2(4, 4)
 script = ExtResource("1_br3ru")
 reflection_sfx = SubResource("Resource_a6o6b")
 footstep_sfx = SubResource("Resource_lxrag")
+preview_loop = SubResource("Resource_d02d2")
+preview_loop_start = SubResource("Resource_thhhm")
 
 [node name="CollisionShape2D" type="CollisionShape2D" parent="."]
 position = Vector2(-0.5, 0)
@@ -834,7 +905,7 @@ camera = NodePath("..")
 
 [node name="mirror_line" type="Line2D" parent="."]
 visible = false
-z_index = 2
+z_index = 3
 points = PackedVector2Array(0, 44, 0, -44)
 width = 1.0
 default_color = Color(1, 1, 1, 0.447059)
@@ -842,7 +913,7 @@ default_color = Color(1, 1, 1, 0.447059)
 [node name="square" type="Sprite2D" parent="."]
 visible = false
 modulate = Color(0.478431, 0.541176, 1, 0.211765)
-z_index = 2
+z_index = 3
 scale = Vector2(11, 11)
 texture = ExtResource("4_bn2n5")
 
@@ -863,5 +934,17 @@ libraries = {
 }
 tree_root = SubResource("AnimationNodeStateMachine_owfg3")
 anim_player = NodePath("../AnimationPlayer")
-parameters/idle/blend_position = Vector2(0, 0)
+parameters/idle/blend_position = Vector2(0.454384, 0.0234742)
 parameters/walk/blend_position = Vector2(0, 0)
+
+[node name="preview_tilemap_floor" type="TileMap" parent="."]
+modulate = Color(0, 0.627451, 0.8, 1)
+z_index = 2
+tile_set = ExtResource("19_r0xtv")
+format = 2
+
+[node name="preview_tilemap" type="TileMap" parent="."]
+modulate = Color(0, 0.626667, 0.8, 1)
+z_index = 2
+tile_set = ExtResource("19_r0xtv")
+format = 2

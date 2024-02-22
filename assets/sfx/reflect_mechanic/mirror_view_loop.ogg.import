@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/mirror_view_loop.ogg-1370d09df4dfda373ffd1c25
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

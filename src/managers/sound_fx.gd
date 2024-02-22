@@ -30,16 +30,14 @@ func play_sfx(sfx_data: SFXData) -> void:
 
 func stop_looping_sfx(sfx_data: SFXData) -> void:
 	var sfx_list: Array = []
-	if sfx_data.single_sfx != null:
-		sfx_list.append(sfx_data.single_sfx.sound_file)
-	if sfx_data.sfx_pool != null:
-		for i in sfx_data.sfx_pool.SFX_pool:
-			sfx_list.append(i.sfx_data.sound_file)
+	if sfx_data.SFX_pool != null:
+		for i in sfx_data.SFX_pool:
+			sfx_list.append(i.sound_file)
 		
 	for i in audio_players_list:
 		if i.stream in sfx_list and i.playing:
 			var tween: Tween = get_tree().create_tween()
-			sfx_data.single_sfx.fade_out_looping_sfx(i, tween)
+			sfx_data.SFX_pool[0].fade_out_looping_sfx(i, tween)
 
 
 func stop_all_sfx(fade_out_length: float) -> void:

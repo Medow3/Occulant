@@ -116,7 +116,7 @@ func _set_up_bus_effects(my_player, remove_bus_func: Callable) -> void:
 func _set_up_tweening(my_player, tween: Tween) -> void:
 	# If we are looping we don't actually want to fade out.
 	# Fading out of looping sound effects is done by the fade_out_looping_sfx function
-	var actually_doing_fade_out: bool = do_fade_out and sound_file.loop_mode == sound_file.LOOP_DISABLED
+	var actually_doing_fade_out: bool = do_fade_out and (sound_file.loop or sound_file.loop_mode == sound_file.LOOP_DISABLED)
 	if not do_fade_in and not actually_doing_fade_out:
 		return
 	
