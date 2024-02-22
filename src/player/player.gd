@@ -39,7 +39,7 @@ func _ready() -> void:
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("Reset"):
-		get_tree().reload_current_scene()
+		Fade.fade_and_reload_scene()
 		return
 	
 	var input_direction: Vector2 = Input.get_vector("Left", "Right", "Up", "Down")

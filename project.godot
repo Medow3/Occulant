@@ -20,6 +20,8 @@ config/icon="res://assets/art/icon.png"
 GameManager="*res://src/managers/game_manager.gd"
 PuzzleGlobal="*res://src/puzzle/puzzle_global.gd"
 SFX="*res://src/managers/sound_fx.tscn"
+Music="*res://src/managers/music.tscn"
+Fade="*res://src/managers/fade.tscn"
 
 [display]
 
