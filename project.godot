@@ -23,8 +23,8 @@ SFX="*res://src/managers/sound_fx.tscn"
 
 [display]
 
-window/size/viewport_width=152
-window/size/viewport_height=88
+window/size/viewport_width=208
+window/size/viewport_height=117
 window/size/mode=2
 window/stretch/mode="canvas_items"
 

@@ -24,8 +24,8 @@ var previewing: bool = false
 var click_reflecting: bool = false
 
 func _ready() -> void:
-	var min_alpha: float = 0.7
-	var max_alpha: float = 0.95
+	var min_alpha: float = 0.8
+	var max_alpha: float = 1
 	var length: float = 0.6
 	var delay: float = 0.05
 	#var tween: Tween = create_tween().set_loops().set_ease(Tween.EASE_IN_OUT).set_trans(Tween.TRANS_SINE)
