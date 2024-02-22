@@ -1,5 +1,7 @@
 class_name Player extends CharacterBody2D
 
+signal about_to_reflect
+
 @export var tilemap: TileMap
 @export var reflection_tile_distance: int = 5
 
@@ -28,8 +30,8 @@ func _physics_process(delta):
 				previewing = true
 			else:
 				previewing = false
-				GameManager.use_mirror()
 				reflect()
+				GameManager.use_mirror()
 	elif Input.is_action_just_pressed("Cancel Reflect"):
 		if GameManager.get_number_of_mirrors_in_inventory() > 0:
 			if previewing:
@@ -57,6 +59,7 @@ func update_reflection_preview() -> void:
 
 
 func reflect() -> void:
+	emit_signal("about_to_reflect")
 	var facing_axis: Vector2 = facing_direction
 	facing_axis.x = round(facing_axis.x)
 	facing_axis.y = round(facing_axis.y)

@@ -56,5 +56,5 @@ color = Color(0.709804, 0.627451, 0.482353, 1)
 polygon = PackedVector2Array(-569, -518, 857, -522, 855, 783, -561, 758)
 
 [node name="GoToNextPuzzle" parent="." instance=ExtResource("4_3hat5")]
-position = Vector2(26, 78)
+position = Vector2(24, 88)
 next_puzzle_path = "res://src/puzzle/puzzles/puzzle3.tscn"
