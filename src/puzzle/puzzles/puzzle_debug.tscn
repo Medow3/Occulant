@@ -1,7 +1,11 @@
-[gd_scene load_steps=2 format=3 uid="uid://ckurrc4qb054s"]
+[gd_scene load_steps=3 format=3 uid="uid://ckurrc4qb054s"]
 
 [ext_resource type="PackedScene" uid="uid://bg0xdm5n2bpgx" path="res://src/puzzle/puzzle.tscn" id="1_17d4a"]
+[ext_resource type="PackedScene" uid="uid://cdpcdj7s5841v" path="res://src/player/player.tscn" id="2_3t42p"]
 
 [node name="PuzzleDebug" instance=ExtResource("1_17d4a")]
 layer_0/tile_data = PackedInt32Array(262150, 0, 327680, 196614, 0, 327680, 131078, 0, 327680, 65542, 0, 327680, 6, 0, 327680, 131080, 0, 65536, 327680, 0, 262144, 327681, 0, 262144, 327682, 0, 262144, 327683, 0, 262144, 327684, 0, 262144, 327685, 0, 262144, 327686, 0, 262144, 327687, 0, 262144, 327688, 0, 262144, 327689, 0, 262144, 327690, 0, 262144, -65526, 0, 262144, -65527, 0, 262144, -65528, 0, 262144, -65529, 0, 262144, -65530, 0, 262144, -65531, 0, 262144, -65532, 0, 262144, -65533, 0, 262144, -65534, 0, 262144, -65535, 0, 262144, -65536, 0, 262144, -1, 0, 262144, 65535, 0, 262144, 131071, 0, 262144, 196607, 0, 262144, 262143, 0, 262144, 327679, 0, 262144, 393215, 0, 262144, 10, 0, 262144, 65546, 0, 262144, 131082, 0, 262144, 196618, 0, 262144, 262154, 0, 262144)
 dimensions = Vector2i(10, 5)
+
+[node name="Player" parent="." index="0" node_paths=PackedStringArray("tilemap") instance=ExtResource("2_3t42p")]
+tilemap = NodePath("..")

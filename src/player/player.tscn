@@ -26,6 +26,7 @@ texture = ExtResource("2_x26oj")
 [node name="Ui" parent="Camera2D/UICanvasLayer" instance=ExtResource("3_umkpr")]
 
 [node name="mirror_line" type="Line2D" parent="."]
+z_index = 2
 points = PackedVector2Array(0, 44, 0, -44)
 width = 1.0
 default_color = Color(1, 1, 1, 0.447059)
@@ -59,5 +60,6 @@ texture = ExtResource("3_weotg")
 
 [node name="Polygon2D" type="Polygon2D" parent="."]
 visible = false
+z_index = 2
 color = Color(0.352941, 0.47451, 0.839216, 0.172549)
 polygon = PackedVector2Array(-44, -44, 44, -44, 44, 44, -44, 44)

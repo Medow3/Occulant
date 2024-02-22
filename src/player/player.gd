@@ -12,6 +12,10 @@ var facing_direction: Vector2 = Vector2.LEFT
 var previewing: bool = false
 
 func _physics_process(delta):
+	if Input.is_action_just_pressed("Reset"):
+		get_tree().reload_current_scene()
+		return
+	
 	var input_direction: Vector2 = Input.get_vector("Left", "Right", "Up", "Down")
 	velocity = input_direction * SPEED
 	
@@ -31,8 +35,6 @@ func _physics_process(delta):
 			if previewing:
 				previewing = false
 	
-
-
 	move_and_slide()
 	update_reflection_preview()
 
@@ -167,23 +169,49 @@ func reflect() -> void:
 	
 	
 	var reflected_side1_pattern: TileMapPattern = create_reflected_pattern_for_side(top_left_of_side1, bottom_right_of_side1, facing_axis)
+	var nonoverritable_side1_pattern: TileMapPattern = create_reflected_pattern_for_side(top_left_of_side1, bottom_right_of_side1, facing_axis, true)
 	var reflected_side2_pattern: TileMapPattern = create_reflected_pattern_for_side(top_left_of_side2, bottom_right_of_side2, facing_axis)
+	var nonoverritable_side2_pattern: TileMapPattern = create_reflected_pattern_for_side(top_left_of_side2, bottom_right_of_side2, facing_axis, true)
 	
 	tilemap.set_pattern(0, top_left_of_side1, reflected_side2_pattern)
 	tilemap.set_pattern(0, top_left_of_side2, reflected_side1_pattern)
+	tilemap.set_pattern(0, top_left_of_side1, nonoverritable_side1_pattern)
+	tilemap.set_pattern(0, top_left_of_side2, nonoverritable_side2_pattern)
 
 
-func create_reflected_pattern_for_side(top_left: Vector2i, bottom_right: Vector2i, facing_axis: Vector2) -> TileMapPattern:
+func create_reflected_pattern_for_side(top_left: Vector2i, bottom_right: Vector2i, facing_axis: Vector2, only_nonoverritable: bool = false) -> TileMapPattern:
 	var reflected_pattern: TileMapPattern = TileMapPattern.new()
 	for x in range(top_left.x, bottom_right.x + 1):
 		for y in range(top_left.y, bottom_right.y + 1):
 			var tilemap_cell_coords: Vector2i = Vector2i(x, y)
-			reflected_pattern.set_cell(
-				get_reflected_pattern_coords(tilemap_cell_coords, top_left, bottom_right, facing_axis),
-				tilemap.get_cell_source_id(0, tilemap_cell_coords),
-				tilemap.get_cell_atlas_coords(0, tilemap_cell_coords),
-				tilemap.get_cell_alternative_tile(0, tilemap_cell_coords)
-			)
+			
+			var tile_data: TileData = tilemap.get_cell_tile_data(0, tilemap_cell_coords)
+			
+			var unmoveable = false
+			if not only_nonoverritable:
+				if tile_data != null:
+					unmoveable = tile_data.get_custom_data("unmoveable")
+					if unmoveable:
+						continue
+				reflected_pattern.set_cell(
+					get_reflected_pattern_coords(tilemap_cell_coords, top_left, bottom_right, facing_axis),
+					tilemap.get_cell_source_id(0, tilemap_cell_coords) if not unmoveable else -1,
+					tilemap.get_cell_atlas_coords(0, tilemap_cell_coords),
+					tilemap.get_cell_alternative_tile(0, tilemap_cell_coords)
+				)
+			else:
+				if tile_data != null:
+					var nonoverritable = tile_data.get_custom_data("unmoveable")
+					if not nonoverritable:
+						continue
+				else:
+					continue
+				reflected_pattern.set_cell(
+					tilemap_cell_coords - top_left,
+					tilemap.get_cell_source_id(0, tilemap_cell_coords),
+					tilemap.get_cell_atlas_coords(0, tilemap_cell_coords),
+					tilemap.get_cell_alternative_tile(0, tilemap_cell_coords)
+				)
 	return reflected_pattern
 
 
