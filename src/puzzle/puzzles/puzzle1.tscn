@@ -27,4 +27,4 @@ tilemap = NodePath("../TileMap")
 
 [node name="GoToNextPuzzle" parent="." instance=ExtResource("4_h4tgk")]
 position = Vector2(128, 20)
-next_puzzle_path = "res://src/puzzle/puzzles/puzzle2.tscn"
+next_puzzle_path = "res://src/puzzle/puzzles/puzzle1_5.tscn"

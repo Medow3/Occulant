@@ -11,10 +11,12 @@ signal about_to_reflect
 @onready var square: Sprite2D = $square
 @onready var animation_handler = $animation_handler
 
-const SPEED = 100.0
+const ACCELERATION: float = 20.0
+const MAX_SPEED: float = 100.0
 
 var facing_direction: Vector2 = Vector2.LEFT
 var previewing: bool = false
+var click_reflecting: bool = false
 
 func _physics_process(delta):
 	if Input.is_action_just_pressed("Reset"):
@@ -22,16 +24,24 @@ func _physics_process(delta):
 		return
 	
 	var input_direction: Vector2 = Input.get_vector("Left", "Right", "Up", "Down")
-	velocity = input_direction * SPEED
+	velocity += input_direction * ACCELERATION
+	var current_speed = velocity.length()
+	current_speed = clamp(current_speed, 0, MAX_SPEED)
+	velocity = velocity.normalized() * current_speed
 	
 	if input_direction != Vector2.ZERO:
 		facing_direction = input_direction.normalized()
 		animation_handler.travel_to_with_blend("walk", facing_direction)
 	else:
+		velocity = Vector2.ZERO
 		animation_handler.travel_to_with_blend("idle", facing_direction)
 		
-	
+	if Input.is_action_just_pressed("Click Reflect"):
+		click_reflecting = true
 	if Input.is_action_just_pressed("Reflect"):
+		click_reflecting = false
+	
+	if Input.is_action_just_pressed("Reflect") or Input.is_action_just_pressed("Click Reflect"):
 		if GameManager.get_number_of_mirrors_in_inventory() > 0:
 			if not previewing:
 				previewing = true
@@ -51,6 +61,8 @@ func _physics_process(delta):
 func update_reflection_preview() -> void:
 	if previewing:
 		var reflection_direction: Vector2 = facing_direction
+		if click_reflecting:
+			reflection_direction = position.direction_to(get_global_mouse_position())
 		reflection_direction.x = sign(round(reflection_direction.x))
 		reflection_direction.y = sign(round(reflection_direction.y))
 		if reflection_direction.x != 0 and reflection_direction.y != 0:
@@ -71,6 +83,8 @@ func reflect() -> void:
 	emit_signal("about_to_reflect")
 	SFX.play_sfx(reflection_sfx)
 	var facing_axis: Vector2 = facing_direction
+	if click_reflecting:
+		facing_axis = position.direction_to(get_global_mouse_position())
 	facing_axis.x = round(facing_axis.x)
 	facing_axis.y = round(facing_axis.y)
 	

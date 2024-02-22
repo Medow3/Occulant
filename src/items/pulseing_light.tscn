@@ -1,0 +1,6 @@
+[gd_scene load_steps=2 format=3 uid="uid://d3olk54tlpb2"]
+
+[ext_resource type="Script" path="res://src/items/pulseing_light.gd" id="2_3q48w"]
+
+[node name="pulseing_light" type="PointLight2D"]
+script = ExtResource("2_3q48w")

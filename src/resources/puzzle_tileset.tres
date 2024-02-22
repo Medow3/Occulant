@@ -1,6 +1,11 @@
-[gd_resource type="TileSet" load_steps=3 format=3 uid="uid://biq2c0ot54uig"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://biq2c0ot54uig"]
 
+[ext_resource type="PackedScene" uid="uid://6l4kyu3if6qv" path="res://src/items/mirror_item.tscn" id="1_rakso"]
 [ext_resource type="Texture2D" uid="uid://b8pdmfokdcbap" path="res://assets/art/asset_packs/Minifantasy_Dungeon_v2.2_Free_Version/Minifantasy_Dungeon_Assets/Tileset/Tileset.png" id="2_nds4t"]
+
+[sub_resource type="TileSetScenesCollectionSource" id="TileSetScenesCollectionSource_ccai4"]
+resource_name = "reflectable_items"
+scenes/1/scene = ExtResource("1_rakso")
 
 [sub_resource type="TileSetAtlasSource" id="TileSetAtlasSource_1nbku"]
 texture = ExtResource("2_nds4t")
@@ -26,7 +31,7 @@ texture_region_size = Vector2i(8, 8)
 8:2/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
 8:2/0/custom_data_0 = true
 13:2/0 = 0
-13:2/0/probability = 32.57
+13:2/0/probability = 52.53
 13:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 13:2/0/physics_layer_0/angular_velocity = 0.0
 14:2/0 = 0
@@ -45,7 +50,7 @@ texture_region_size = Vector2i(8, 8)
 17:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 17:2/0/physics_layer_0/angular_velocity = 0.0
 18:2/0 = 0
-18:2/0/probability = 4.0
+18:2/0/probability = 3.86
 18:2/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 18:2/0/physics_layer_0/angular_velocity = 0.0
 19:2/0 = 0
@@ -148,7 +153,6 @@ texture_region_size = Vector2i(8, 8)
 17:5/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 17:5/0/physics_layer_0/angular_velocity = 0.0
 17:5/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
-17:5/0/custom_data_0 = true
 4:6/0 = 0
 4:6/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 4:6/0/physics_layer_0/angular_velocity = 0.0
@@ -673,6 +677,9 @@ texture_region_size = Vector2i(8, 8)
 8:15/0/physics_layer_0/linear_velocity = Vector2(0, 0)
 8:15/0/physics_layer_0/angular_velocity = 0.0
 8:15/0/physics_layer_0/polygon_0/points = PackedVector2Array(-4, -4, 4, -4, 4, 4, -4, 4)
+24:24/0 = 0
+24:24/0/physics_layer_0/linear_velocity = Vector2(0, 0)
+24:24/0/physics_layer_0/angular_velocity = 0.0
 
 [resource]
 tile_size = Vector2i(8, 8)
@@ -681,3 +688,4 @@ terrain_set_0/mode = 0
 custom_data_layer_0/name = "unmoveable"
 custom_data_layer_0/type = 1
 sources/1 = SubResource("TileSetAtlasSource_1nbku")
+sources/0 = SubResource("TileSetScenesCollectionSource_ccai4")

@@ -1,7 +1,8 @@
-[gd_scene load_steps=4 format=3 uid="uid://6l4kyu3if6qv"]
+[gd_scene load_steps=5 format=3 uid="uid://6l4kyu3if6qv"]
 
 [ext_resource type="Script" path="res://src/items/mirror_item.gd" id="1_pf2gv"]
 [ext_resource type="Texture2D" uid="uid://cs7vv2vnxw2l6" path="res://assets/art/items/mirror_item.png" id="1_qrjce"]
+[ext_resource type="PackedScene" uid="uid://d3olk54tlpb2" path="res://src/items/pulseing_light.tscn" id="3_km8st"]
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lq3mo"]
 radius = 5.0
@@ -15,5 +16,14 @@ shape = SubResource("CircleShape2D_lq3mo")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 texture = ExtResource("1_qrjce")
+
+[node name="pulseing_light" parent="." instance=ExtResource("3_km8st")]
+position = Vector2(-4.17233e-07, 3.57628e-07)
+scale = Vector2(1.42857, 1.4)
+color = Color(0, 1, 1, 0.462745)
+texture = ExtResource("1_qrjce")
+texture_scale_min = 0.1
+length = 0.5
+delay = 0.05
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]
