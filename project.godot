@@ -11,7 +11,7 @@ config_version=5
 [application]
 
 config/name="UVGD-jam-mirror-game"
-run/main_scene="res://src/main.tscn"
+run/main_scene="res://src/puzzle/puzzles/puzzle1.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
 config/icon="res://assets/art/icon.png"
 
