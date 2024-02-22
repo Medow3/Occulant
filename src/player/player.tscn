@@ -1,4 +1,4 @@
-[gd_scene load_steps=59 format=3 uid="uid://cdpcdj7s5841v"]
+[gd_scene load_steps=60 format=3 uid="uid://cdpcdj7s5841v"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_br3ru"]
 [ext_resource type="Script" path="res://src/resources/SFX/single_SFX_data.gd" id="2_aeo80"]
@@ -21,6 +21,7 @@
 [ext_resource type="AudioStream" uid="uid://ct7vkvaoo1d0n" path="res://assets/sfx/reflect_mechanic/mirror_view_loop.ogg" id="12_57xky"]
 [ext_resource type="AudioStream" uid="uid://drauu8wt33mem" path="res://assets/sfx/reflect_mechanic/mirror_view_start.ogg" id="13_e6x2h"]
 [ext_resource type="TileSet" uid="uid://domg58cay67u3" path="res://src/resources/preview_tileset.tres" id="19_r0xtv"]
+[ext_resource type="Script" path="res://src/player/playerAnimationTree.gd" id="21_xa5p7"]
 
 [sub_resource type="Resource" id="Resource_xodp2"]
 script = ExtResource("2_aeo80")
@@ -929,6 +930,7 @@ libraries = {
 }
 
 [node name="AnimationTree" type="AnimationTree" parent="animation_handler"]
+active = false
 libraries = {
 "": SubResource("AnimationLibrary_3ar3f")
 }
@@ -936,6 +938,7 @@ tree_root = SubResource("AnimationNodeStateMachine_owfg3")
 anim_player = NodePath("../AnimationPlayer")
 parameters/idle/blend_position = Vector2(0.454384, 0.0234742)
 parameters/walk/blend_position = Vector2(0, 0)
+script = ExtResource("21_xa5p7")
 
 [node name="preview_tilemap_floor" type="TileMap" parent="."]
 modulate = Color(0, 0.627451, 0.8, 1)
