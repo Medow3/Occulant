@@ -58,4 +58,4 @@ polygon = PackedVector2Array(-569, -518, 857, -522, 855, 783, -561, 758)
 
 [node name="GoToNextPuzzle" parent="." instance=ExtResource("4_al6uk")]
 position = Vector2(210, -15)
-next_puzzle_path = "res://src/puzzle/puzzles/puzzle3.tscn"
+next_puzzle_path = "res://src/puzzle/puzzles/puzzle4.tscn"
