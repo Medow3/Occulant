@@ -4,7 +4,7 @@ class_name Player extends CharacterBody2D
 @export var reflection_tile_distance: int = 5
 
 @onready var mirror_line: Line2D = $mirror_line
-@onready var polygon: Polygon2D = $Polygon2D
+@onready var square: Sprite2D = $square
 
 const SPEED = 100.0
 
@@ -49,71 +49,11 @@ func update_reflection_preview() -> void:
 		var player_map_grid_cords: Vector2i = tilemap.local_to_map(global_position)
 		mirror_line.global_position = tilemap.map_to_local(player_map_grid_cords)
 		mirror_line.global_rotation = atan2(reflection_direction.y, reflection_direction.x)
-		show_reflection_corners()
-		polygon.visible = true
-		polygon.global_position = tilemap.map_to_local(player_map_grid_cords)
+		square.visible = true
+		square.global_position = tilemap.map_to_local(player_map_grid_cords)
 	else:
 		mirror_line.visible = false
-		polygon.visible = false
-
-
-func show_reflection_corners() -> void:
-	var facing_axis: Vector2 = facing_direction
-	facing_axis.x = round(facing_axis.x)
-	facing_axis.y = round(facing_axis.y)
-	
-	var perpendicular_axis_3d: Vector3 = Vector3(facing_axis.x, facing_axis.y, 0).cross(Vector3(0, 0, 1))
-	var perpendicular_axis: Vector2 = Vector2(perpendicular_axis_3d.x, perpendicular_axis_3d.y)
-	
-	var player_map_grid_cords: Vector2i = tilemap.local_to_map(global_position)
-	var top_left_of_side1: Vector2i
-	var bottom_right_of_side1: Vector2i
-	var top_left_of_side2: Vector2i
-	var bottom_right_of_side2: Vector2i
-	if abs(facing_axis.x) == 1:
-		top_left_of_side1 = player_map_grid_cords + Vector2i(
-				-facing_axis.x * reflection_tile_distance, perpendicular_axis.y * reflection_tile_distance)
-		bottom_right_of_side1 = player_map_grid_cords + Vector2i(
-				-facing_axis.x * 1, -perpendicular_axis.y * reflection_tile_distance)
-		
-		top_left_of_side2 = player_map_grid_cords + Vector2i(
-				facing_axis.x * 1, perpendicular_axis.y * reflection_tile_distance)
-		bottom_right_of_side2 = player_map_grid_cords + Vector2i(
-				facing_axis.x * reflection_tile_distance, -perpendicular_axis.y * reflection_tile_distance)
-		
-		if facing_axis.x == -1:
-			var temp: Vector2i = bottom_right_of_side1
-			bottom_right_of_side1 = top_left_of_side1
-			top_left_of_side1 = temp
-			
-			temp = bottom_right_of_side2
-			bottom_right_of_side2 = top_left_of_side2
-			top_left_of_side2 = temp
-	elif abs(facing_axis.y) == 1:
-		top_left_of_side1 = player_map_grid_cords + Vector2i(
-				-perpendicular_axis.x * reflection_tile_distance, -facing_axis.y * reflection_tile_distance)
-		bottom_right_of_side1 = player_map_grid_cords + Vector2i(
-				perpendicular_axis.x * reflection_tile_distance, -facing_axis.y * 1)
-		
-		top_left_of_side2 = player_map_grid_cords + Vector2i(
-				-perpendicular_axis.x * reflection_tile_distance, facing_axis.y * 1)
-		bottom_right_of_side2 = player_map_grid_cords + Vector2i(
-				perpendicular_axis.x * reflection_tile_distance, facing_axis.y * reflection_tile_distance)
-		
-		if facing_axis.y == -1:
-			var temp: Vector2i = bottom_right_of_side1
-			bottom_right_of_side1 = top_left_of_side1
-			top_left_of_side1 = temp
-			
-			temp = bottom_right_of_side2
-			bottom_right_of_side2 = top_left_of_side2
-			top_left_of_side2 = temp
-	
-	$debug_corner_sprite1.global_position = tilemap.map_to_local(top_left_of_side1)
-	$debug_corner_sprite2.global_position = tilemap.map_to_local(bottom_right_of_side1)
-	$debug_corner_sprite3.global_position = tilemap.map_to_local(top_left_of_side2)
-	$debug_corner_sprite4.global_position = tilemap.map_to_local(bottom_right_of_side2)
-	
+		square.visible = false
 
 
 func reflect() -> void:
