@@ -10,7 +10,6 @@ script = ExtResource("1_wfhqe")
 start_with_reflection_uses = 2
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(-1, 0)
 tile_set = ExtResource("2_7sfv1")
 format = 2
 layer_0/name = "main"
@@ -18,7 +17,6 @@ layer_0/tile_data = PackedInt32Array(65535, 1376257, 3, 393215, 1376257, 4, 3276
 
 [node name="floorTileMap" type="TileMap" parent="."]
 z_index = -4
-position = Vector2(-1, 0)
 tile_set = ExtResource("2_7sfv1")
 format = 2
 layer_0/name = "main"

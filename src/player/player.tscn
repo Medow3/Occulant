@@ -912,7 +912,7 @@ default_color = Color(1, 1, 1, 0.447059)
 
 [node name="square" type="Sprite2D" parent="."]
 visible = false
-modulate = Color(0.478431, 0.541176, 1, 0.211765)
+modulate = Color(0.478431, 0.541176, 1, 0.0901961)
 z_index = 3
 scale = Vector2(11, 11)
 texture = ExtResource("4_bn2n5")

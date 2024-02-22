@@ -10,7 +10,6 @@ script = ExtResource("1_dm4qd")
 start_with_reflection_uses = 0
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(-1, 0)
 tile_set = ExtResource("2_fgjvu")
 format = 2
 layer_0/name = "main"
@@ -18,7 +17,6 @@ layer_0/tile_data = PackedInt32Array(-262135, 1376257, 3, -327671, 1376257, 4, -
 
 [node name="floorTileMap" type="TileMap" parent="."]
 z_index = -4
-position = Vector2(-1, 0)
 tile_set = ExtResource("2_fgjvu")
 format = 2
 layer_0/name = "main"

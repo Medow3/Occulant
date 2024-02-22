@@ -10,7 +10,6 @@ script = ExtResource("1_dacpp")
 start_with_reflection_uses = 0
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(-1, 0)
 tile_set = ExtResource("2_dhb4l")
 format = 2
 layer_0/name = "main"
@@ -18,7 +17,6 @@ layer_0/tile_data = PackedInt32Array(-589814, 1376257, 4, -655350, 1376257, 3, -
 
 [node name="floorTileMap" type="TileMap" parent="."]
 z_index = -4
-position = Vector2(-1, 0)
 tile_set = ExtResource("2_dhb4l")
 format = 2
 layer_0/name = "main"
@@ -41,3 +39,7 @@ polygon = PackedVector2Array(-569, -518, 857, -522, 855, 783, -561, 758)
 [node name="GoToNextPuzzle" parent="." instance=ExtResource("4_61t7g")]
 position = Vector2(120, 12)
 next_puzzle_path = "res://src/puzzle/puzzles/puzzle3.tscn"
+
+[connection signal="body_entered" from="TileMap/MirrorItem" to="TileMap/MirrorItem" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@229967" to="TileMap/@Area2D@229967" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@229968" to="TileMap/@Area2D@229968" method="_on_body_entered"]

@@ -9,7 +9,6 @@
 script = ExtResource("1_paiyr")
 
 [node name="TileMap" type="TileMap" parent="."]
-position = Vector2(-1, 0)
 tile_set = ExtResource("2_17s68")
 format = 2
 layer_0/name = "main"
@@ -17,7 +16,6 @@ layer_0/tile_data = PackedInt32Array(-589814, 1376257, 4, -655350, 1376257, 3, -
 
 [node name="floorTileMap" type="TileMap" parent="."]
 z_index = -4
-position = Vector2(-1, 0)
 tile_set = ExtResource("2_17s68")
 format = 2
 layer_0/name = "main"
