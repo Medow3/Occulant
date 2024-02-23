@@ -3,7 +3,7 @@
 [ext_resource type="Script" path="res://src/items/mirror_item.gd" id="1_pf2gv"]
 [ext_resource type="Texture2D" uid="uid://cs7vv2vnxw2l6" path="res://assets/art/items/mirror_item.png" id="1_qrjce"]
 [ext_resource type="Script" path="res://src/resources/SFX/single_SFX_data.gd" id="2_argry"]
-[ext_resource type="PackedScene" uid="uid://d3olk54tlpb2" path="res://src/items/pulseing_light.tscn" id="3_km8st"]
+[ext_resource type="PackedScene" path="res://src/items/pulseing_light.tscn" id="3_km8st"]
 [ext_resource type="AudioStream" uid="uid://ckxh7hhe3g5c1" path="res://assets/sfx/reflect_mechanic/mirror_pickup_1.ogg" id="3_mru0u"]
 [ext_resource type="Script" path="res://src/resources/SFX/SFX_data.gd" id="4_og3ov"]
 

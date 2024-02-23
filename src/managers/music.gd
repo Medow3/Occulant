@@ -16,7 +16,8 @@ var _rng: RandomNumberGenerator = RandomNumberGenerator.new()
 
 func _ready() -> void:
 	_rng.randomize()
-	play_song(load("res://assets/music/gamejam_demo1.mp3"))
+	if Settings.music_enabled:
+		play_song(load("res://assets/music/gamejam_demo1.mp3"))
 
 
 # Default use: Music.play_song("", Music.DEFAULT_MUSIC_VOLUME, Music.DEFAULT_CROSSFADE_TIME)
@@ -30,3 +31,5 @@ func play_song(new_song: AudioStream, volume: float = DEFAULT_MUSIC_VOLUME, fade
 	tween = get_tree().create_tween().set_trans(MUSIC_CROSSFADE_TWEEN_TRANS).set_ease(MUSIC_CROSSFADE_TWEEN_EASE)
 	tween.tween_property(music_player, "volume_db", volume, fade_duration).from(-80)
 
+func stop_song() -> void:
+	music_player.stop()

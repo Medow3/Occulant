@@ -5,7 +5,7 @@
 [ext_resource type="Script" path="res://src/resources/SFX/SFX_data.gd" id="2_c6n6l"]
 [ext_resource type="Texture2D" uid="uid://uimhuxsogttm" path="res://assets/art/player/player_temp.png" id="2_x26oj"]
 [ext_resource type="AudioStream" uid="uid://bt7dopbj48li5" path="res://assets/sfx/reflect_mechanic/mirror_flip_1.ogg" id="3_6acn2"]
-[ext_resource type="PackedScene" uid="uid://boenxo84k7wjn" path="res://src/tools/screen_shaker.tscn" id="3_odial"]
+[ext_resource type="PackedScene" path="res://src/tools/screen_shaker.tscn" id="3_odial"]
 [ext_resource type="PackedScene" uid="uid://6sk62m067x3" path="res://src/UI/ui.tscn" id="3_umkpr"]
 [ext_resource type="Texture2D" uid="uid://c6bhpoq7jmbfj" path="res://assets/art/white_square.png" id="4_bn2n5"]
 [ext_resource type="AudioStream" uid="uid://eefpsx5lx4v0" path="res://assets/sfx/reflect_mechanic/mirror_flip_2.ogg" id="4_nfy23"]
@@ -23,7 +23,7 @@
 [ext_resource type="AudioStream" uid="uid://drauu8wt33mem" path="res://assets/sfx/reflect_mechanic/mirror_view_start.ogg" id="13_e6x2h"]
 [ext_resource type="AudioStream" uid="uid://b3t8fr5m3chvg" path="res://assets/sfx/footstep_3.ogg" id="13_mbw0a"]
 [ext_resource type="PackedScene" uid="uid://ppwn5jrs1m3r" path="res://src/UI/pause_screen/pause_screen.tscn" id="17_pr2fb"]
-[ext_resource type="TileSet" uid="uid://domg58cay67u3" path="res://src/resources/preview_tileset.tres" id="19_r0xtv"]
+[ext_resource type="TileSet" uid="uid://qan6qtf41021" path="res://src/resources/preview_tileset.tres" id="19_r0xtv"]
 [ext_resource type="Script" path="res://src/player/playerAnimationTree.gd" id="21_xa5p7"]
 
 [sub_resource type="Resource" id="Resource_xodp2"]

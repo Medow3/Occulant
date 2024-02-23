@@ -110,6 +110,11 @@ func update_reflection_preview() -> void:
 
 
 func preview_reflection() -> void:
+	if not Settings.preview_reflections_enabled:
+		preview_tilemap.visible = false
+		preview_tilemap_floor.visible = false
+		return
+	
 	var facing_axis: Vector2 = facing_direction
 	if click_reflecting:
 		facing_axis = position.direction_to(get_global_mouse_position())

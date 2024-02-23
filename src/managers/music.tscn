@@ -1,4 +1,4 @@
-[gd_scene load_steps=2 format=3 uid="uid://b2pq3nns6qr6l"]
+[gd_scene load_steps=2 format=3 uid="uid://14jsyi3r1qme"]
 
 [ext_resource type="Script" path="res://src/managers/music.gd" id="1"]
 

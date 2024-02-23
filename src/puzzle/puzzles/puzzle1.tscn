@@ -4,7 +4,7 @@
 [ext_resource type="PackedScene" uid="uid://cdpcdj7s5841v" path="res://src/player/player.tscn" id="2_ivuo0"]
 [ext_resource type="TileSet" uid="uid://biq2c0ot54uig" path="res://src/resources/puzzle_tileset.tres" id="2_xngup"]
 [ext_resource type="PackedScene" uid="uid://c550ra3vrymql" path="res://src/go_to_next_puzzle.tscn" id="4_h4tgk"]
-[ext_resource type="PackedScene" uid="uid://q0wc4hpplv0" path="res://src/UI/tutorial_label.tscn" id="5_7q7ca"]
+[ext_resource type="PackedScene" path="res://src/UI/tutorial_label.tscn" id="5_7q7ca"]
 
 [node name="puzzle1" type="Node2D"]
 script = ExtResource("1_txi5e")

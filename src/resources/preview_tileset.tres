@@ -1,4 +1,4 @@
-[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://domg58cay67u3"]
+[gd_resource type="TileSet" load_steps=5 format=3 uid="uid://qan6qtf41021"]
 
 [ext_resource type="PackedScene" uid="uid://6l4kyu3if6qv" path="res://src/items/mirror_item.tscn" id="1_ke35m"]
 [ext_resource type="Texture2D" uid="uid://b8pdmfokdcbap" path="res://assets/art/asset_packs/Minifantasy_Dungeon_v2.2_Free_Version/Minifantasy_Dungeon_Assets/Tileset/Tileset.png" id="2_4p4sh"]
