@@ -37,7 +37,7 @@ SFX_pool_weights = Array[float]([1.0])
 prevent_same_sound_twice_in_a_row = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_lq3mo"]
-radius = 5.0
+radius = 4.0
 
 [node name="MirrorItem" type="Area2D"]
 z_index = 1
@@ -58,5 +58,11 @@ texture = ExtResource("1_qrjce")
 texture_scale_min = 0.1
 length = 0.5
 delay = 0.05
+
+[node name="Timer" type="Timer" parent="."]
+process_callback = 0
+wait_time = 0.1
+one_shot = true
+autostart = true
 
 [connection signal="body_entered" from="." to="." method="_on_body_entered"]

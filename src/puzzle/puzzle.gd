@@ -28,10 +28,11 @@ func _save_state() -> void:
 
 
 func _load_state(state: Dictionary) -> void:
+	print("load")
 	SFX.play_sfx(undo_sfx)
+	player.global_position = state["player_global_position"]
 	tilemap.clear()
 	tilemap.set_pattern(0, state["top_left_tile_coord"], state["tiles"])
-	player.global_position = state["player_global_position"]
 	GameManager.set_number_of_mirrors_in_inventory(state["mirrors_held"])
 	player.previewing = false
 
