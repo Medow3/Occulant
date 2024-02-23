@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://dq27rpxqwi6br"]
+[gd_scene load_steps=6 format=3 uid="uid://dq27rpxqwi6br"]
 
 [ext_resource type="Script" path="res://src/puzzle/puzzle.gd" id="1_gplbh"]
 [ext_resource type="TileSet" uid="uid://biq2c0ot54uig" path="res://src/resources/puzzle_tileset.tres" id="2_ill3a"]
 [ext_resource type="PackedScene" uid="uid://cdpcdj7s5841v" path="res://src/player/player.tscn" id="3_evjym"]
 [ext_resource type="PackedScene" uid="uid://c550ra3vrymql" path="res://src/go_to_next_puzzle.tscn" id="4_al6uk"]
+[ext_resource type="PackedScene" uid="uid://q0wc4hpplv0" path="res://src/UI/tutorial_label.tscn" id="5_pixjv"]
 
 [node name="puzzle3" type="Node2D"]
 script = ExtResource("1_gplbh")
@@ -30,3 +31,17 @@ floor_tilemap = NodePath("../floorTileMap2")
 [node name="GoToNextPuzzle" parent="." instance=ExtResource("4_al6uk")]
 position = Vector2(208, -16)
 next_puzzle_path = "res://src/puzzle/puzzles/puzzle3_5.tscn"
+
+[node name="tutorial_label" parent="." instance=ExtResource("5_pixjv")]
+offset_left = 51.0
+offset_top = -33.0
+offset_right = 90.0
+offset_bottom = -3.0
+text = "Q or Face Button Left to Undo"
+
+[node name="tutorial_label2" parent="." instance=ExtResource("5_pixjv")]
+offset_left = 50.0
+offset_top = 52.0
+offset_right = 89.0
+offset_bottom = 82.0
+text = "E or Face Button Top to Redo"

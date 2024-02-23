@@ -1,6 +1,7 @@
-[gd_scene load_steps=2 format=3 uid="uid://q0wc4hpplv0"]
+[gd_scene load_steps=3 format=3 uid="uid://q0wc4hpplv0"]
 
 [ext_resource type="FontFile" uid="uid://mu7uis4wp445" path="res://assets/fonts/13487095304649/BLKCHCRY.TTF" id="1_deyl5"]
+[ext_resource type="Script" path="res://src/UI/tutorial_label.gd" id="2_ekqdl"]
 
 [node name="tutorial_label" type="Label"]
 z_index = 6
@@ -15,3 +16,4 @@ theme_override_fonts/font = ExtResource("1_deyl5")
 theme_override_font_sizes/font_size = 6
 horizontal_alignment = 1
 autowrap_mode = 3
+script = ExtResource("2_ekqdl")

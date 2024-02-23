@@ -926,7 +926,7 @@ states/walk/position = Vector2(684, 116)
 transitions = ["Start", "idle", SubResource("AnimationNodeStateMachineTransition_30jhc"), "idle", "walk", SubResource("AnimationNodeStateMachineTransition_hiwrf"), "walk", "idle", SubResource("AnimationNodeStateMachineTransition_2evrt")]
 graph_offset = Vector2(-314, -27)
 
-[node name="Player" type="CharacterBody2D"]
+[node name="Player" type="CharacterBody2D" groups=["Player"]]
 position = Vector2(4, 4)
 script = ExtResource("1_br3ru")
 reflection_sfx = SubResource("Resource_a6o6b")
