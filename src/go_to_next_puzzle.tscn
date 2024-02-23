@@ -7,7 +7,7 @@
 [sub_resource type="CircleShape2D" id="CircleShape2D_ylpq8"]
 radius = 4.0
 
-[node name="GoToNextPuzzle" type="Area2D"]
+[node name="GoToNextPuzzle" type="Area2D" groups=["Puzzle End"]]
 script = ExtResource("1_jaqb3")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]

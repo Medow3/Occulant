@@ -1,0 +1,83 @@
+[gd_scene load_steps=5 format=3 uid="uid://ppwn5jrs1m3r"]
+
+[ext_resource type="Script" path="res://src/UI/pause_screen/pause_screen.gd" id="1_cc1gf"]
+[ext_resource type="FontFile" uid="uid://mu7uis4wp445" path="res://assets/fonts/13487095304649/BLKCHCRY.TTF" id="2_g8q23"]
+[ext_resource type="StyleBox" uid="uid://crnai1k8oxxie" path="res://src/resources/button_normal_style_box_flat.tres" id="3_gnpy6"]
+[ext_resource type="StyleBox" uid="uid://41q55rsqq25l" path="res://src/resources/button_hover_style_box_flat.tres" id="4_w5eho"]
+
+[node name="pause_screen" type="Control"]
+process_mode = 3
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+script = ExtResource("1_cc1gf")
+
+[node name="ColorRect" type="ColorRect" parent="."]
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+mouse_filter = 2
+color = Color(0.0705882, 0, 0, 0.733333)
+
+[node name="VBoxContainer" type="VBoxContainer" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -30.0
+offset_top = -40.5
+offset_right = 30.0
+offset_bottom = 29.5
+grow_horizontal = 2
+grow_vertical = 2
+alignment = 1
+
+[node name="Label" type="Label" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_g8q23")
+theme_override_font_sizes/font_size = 14
+text = "Paused"
+horizontal_alignment = 1
+
+[node name="skip" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_g8q23")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = ExtResource("3_gnpy6")
+theme_override_styles/hover = ExtResource("4_w5eho")
+theme_override_styles/pressed = ExtResource("3_gnpy6")
+theme_override_styles/focus = ExtResource("3_gnpy6")
+text = "Skip Level"
+
+[node name="main_menu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_g8q23")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = ExtResource("3_gnpy6")
+theme_override_styles/hover = ExtResource("4_w5eho")
+theme_override_styles/pressed = ExtResource("3_gnpy6")
+theme_override_styles/focus = ExtResource("3_gnpy6")
+text = "Main Menu"
+
+[node name="contineu" type="Button" parent="VBoxContainer"]
+layout_mode = 2
+theme_override_fonts/font = ExtResource("2_g8q23")
+theme_override_font_sizes/font_size = 6
+theme_override_styles/normal = ExtResource("3_gnpy6")
+theme_override_styles/hover = ExtResource("4_w5eho")
+theme_override_styles/pressed = ExtResource("3_gnpy6")
+theme_override_styles/focus = ExtResource("3_gnpy6")
+text = "Continue"
+
+[connection signal="pressed" from="VBoxContainer/skip" to="." method="_on_skip_pressed"]
+[connection signal="pressed" from="VBoxContainer/main_menu" to="." method="_on_main_menu_pressed"]
+[connection signal="pressed" from="VBoxContainer/contineu" to="." method="_on_contineu_pressed"]

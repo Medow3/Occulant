@@ -1,7 +1,6 @@
 extends Node
 
 @onready var music_player = $music_player
-@onready var tween = $Tween
 
 const MUSIC_DIRECTORY_PATH = "res://assets/music/"
 const DEFAULT_MUSIC_VOLUME: float = -26.0
