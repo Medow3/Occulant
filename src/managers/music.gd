@@ -17,7 +17,7 @@ var _rng: RandomNumberGenerator = RandomNumberGenerator.new()
 func _ready() -> void:
 	_rng.randomize()
 	if Settings.music_enabled:
-		play_song(load("res://assets/music/gamejam_demo1.mp3"))
+		play_song(load("res://assets/music/ambient_mus.mp3"))
 
 
 # Default use: Music.play_song("", Music.DEFAULT_MUSIC_VOLUME, Music.DEFAULT_CROSSFADE_TIME)

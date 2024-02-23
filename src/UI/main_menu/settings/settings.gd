@@ -19,7 +19,7 @@ func _on_reflection_preview_toggle_toggled(toggled_on):
 func _on_music_toggled(toggled_on):
 	Settings.music_enabled = toggled_on
 	if Settings.music_enabled:
-		Music.play_song(load("res://assets/music/gamejam_demo1.mp3"))
+		Music.play_song(load("res://assets/music/ambient_mus.mp3"))
 	else:
 		Music.stop_song()
 		
