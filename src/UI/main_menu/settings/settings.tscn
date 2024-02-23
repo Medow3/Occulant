@@ -1,0 +1,131 @@
+[gd_scene load_steps=9 format=3 uid="uid://csmk81wrg1na0"]
+
+[ext_resource type="Script" path="res://src/UI/main_menu/settings/settings.gd" id="1_gpf6w"]
+[ext_resource type="Shader" path="res://src/UI/main_menu/main_menu.gdshader" id="2_xg4p2"]
+[ext_resource type="Texture2D" uid="uid://c6bhpoq7jmbfj" path="res://assets/art/white_square.png" id="3_xx4l3"]
+[ext_resource type="FontFile" uid="uid://mu7uis4wp445" path="res://assets/fonts/13487095304649/BLKCHCRY.TTF" id="4_6ggd2"]
+[ext_resource type="StyleBox" path="res://src/resources/button_normal_style_box_flat.tres" id="5_odv08"]
+[ext_resource type="StyleBox" path="res://src/resources/button_hover_style_box_flat.tres" id="6_k8nle"]
+[ext_resource type="Script" path="res://src/UI/button_click.gd" id="7_r73gm"]
+
+[sub_resource type="ShaderMaterial" id="ShaderMaterial_odbe4"]
+shader = ExtResource("2_xg4p2")
+shader_parameter/color_a = Color(0.501961, 0, 0, 1)
+shader_parameter/color_b = Color(0.188235, 0.188235, 0.188235, 1)
+shader_parameter/color_c = Color(1, 1, 1, 1)
+shader_parameter/color_d = Color(0.211765, 0, 0.00392157, 1)
+shader_parameter/iterations = 10
+shader_parameter/speed = 1.0
+shader_parameter/zoom = 1.0
+shader_parameter/subtract = 0.5
+shader_parameter/multiply = 1.1
+
+[node name="settings" type="Control"]
+layout_mode = 3
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+script = ExtResource("1_gpf6w")
+
+[node name="TextureRect" type="TextureRect" parent="."]
+material = SubResource("ShaderMaterial_odbe4")
+layout_mode = 1
+anchors_preset = 15
+anchor_right = 1.0
+anchor_bottom = 1.0
+grow_horizontal = 2
+grow_vertical = 2
+texture = ExtResource("3_xx4l3")
+
+[node name="title" type="Label" parent="."]
+layout_mode = 1
+anchors_preset = 5
+anchor_left = 0.5
+anchor_right = 0.5
+offset_left = -45.0
+offset_top = 10.0
+offset_right = 45.0
+offset_bottom = 33.0
+grow_horizontal = 2
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_shadow_color = Color(0.109804, 0.109804, 0.109804, 0.878431)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/shadow_offset_x = 1
+theme_override_constants/shadow_offset_y = 1
+theme_override_constants/outline_size = 1
+theme_override_fonts/font = ExtResource("4_6ggd2")
+theme_override_font_sizes/font_size = 18
+text = "Settings"
+horizontal_alignment = 1
+
+[node name="back" type="Button" parent="."]
+layout_mode = 1
+offset_left = 5.0
+offset_top = 5.0
+offset_right = 35.0
+offset_bottom = 18.0
+theme_override_fonts/font = ExtResource("4_6ggd2")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("5_odv08")
+theme_override_styles/hover = ExtResource("6_k8nle")
+theme_override_styles/pressed = ExtResource("5_odv08")
+theme_override_styles/focus = ExtResource("5_odv08")
+text = "Back"
+script = ExtResource("7_r73gm")
+
+[node name="reflection_preview_toggle" type="CheckButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = -18.5
+offset_right = 51.0
+offset_bottom = 13.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_6ggd2")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("5_odv08")
+theme_override_styles/pressed = ExtResource("5_odv08")
+theme_override_styles/disabled = ExtResource("5_odv08")
+theme_override_styles/hover = ExtResource("6_k8nle")
+theme_override_styles/hover_pressed = ExtResource("6_k8nle")
+theme_override_styles/focus = ExtResource("5_odv08")
+text = "Show Reflection
+Previews"
+alignment = 1
+script = ExtResource("7_r73gm")
+
+[node name="music" type="CheckButton" parent="."]
+layout_mode = 1
+anchors_preset = 8
+anchor_left = 0.5
+anchor_top = 0.5
+anchor_right = 0.5
+anchor_bottom = 0.5
+offset_left = -50.0
+offset_top = 21.5
+offset_right = 51.0
+offset_bottom = 39.5
+grow_horizontal = 2
+grow_vertical = 2
+theme_override_fonts/font = ExtResource("4_6ggd2")
+theme_override_font_sizes/font_size = 8
+theme_override_styles/normal = ExtResource("5_odv08")
+theme_override_styles/pressed = ExtResource("5_odv08")
+theme_override_styles/disabled = ExtResource("5_odv08")
+theme_override_styles/hover = ExtResource("6_k8nle")
+theme_override_styles/hover_pressed = ExtResource("6_k8nle")
+theme_override_styles/focus = ExtResource("5_odv08")
+text = "Music"
+alignment = 1
+script = ExtResource("7_r73gm")
+
+[connection signal="pressed" from="back" to="." method="_on_back_pressed"]
+[connection signal="toggled" from="reflection_preview_toggle" to="." method="_on_reflection_preview_toggle_toggled"]
+[connection signal="toggled" from="music" to="." method="_on_music_toggled"]

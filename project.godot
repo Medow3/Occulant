@@ -10,9 +10,11 @@ config_version=5
 
 [application]
 
-config/name="UVGD-jam-mirror-game"
+config/name="Occulant"
+config/version="0.1"
 run/main_scene="res://src/UI/main_menu/main_menu.tscn"
 config/features=PackedStringArray("4.2", "Forward Plus")
+boot_splash/bg_color=Color(0.129412, 0, 0, 1)
 config/icon="res://assets/art/icon.png"
 
 [autoload]
@@ -22,6 +24,7 @@ PuzzleGlobal="*res://src/puzzle/puzzle_global.gd"
 SFX="*res://src/managers/sound_fx.tscn"
 Music="*res://src/managers/music.tscn"
 Fade="*res://src/managers/fade.tscn"
+Settings="*res://src/managers/settings.gd"
 
 [display]
 

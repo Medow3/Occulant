@@ -4,7 +4,7 @@
 [ext_resource type="Script" path="res://src/resources/SFX/single_SFX_data.gd" id="2_7gla6"]
 [ext_resource type="Texture2D" uid="uid://cun32xsvcc41" path="res://assets/art/summoning_circle.png" id="2_sdcau"]
 [ext_resource type="AudioStream" uid="uid://dva4dy52xdcfb" path="res://assets/sfx/reflect_mechanic/level_complete_1.ogg" id="3_2oblp"]
-[ext_resource type="PackedScene" uid="uid://d3olk54tlpb2" path="res://src/items/pulseing_light.tscn" id="3_krnqg"]
+[ext_resource type="PackedScene" path="res://src/items/pulseing_light.tscn" id="3_krnqg"]
 [ext_resource type="AudioStream" uid="uid://cxm3eyrx2mmx6" path="res://assets/sfx/reflect_mechanic/level_complete_2.ogg" id="4_xc1ot"]
 [ext_resource type="AudioStream" uid="uid://d2xes8b7q0jwe" path="res://assets/sfx/reflect_mechanic/level_complete_3.ogg" id="5_5ro6n"]
 [ext_resource type="Script" path="res://src/resources/SFX/SFX_data.gd" id="6_g56r3"]

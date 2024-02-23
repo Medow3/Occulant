@@ -5,10 +5,6 @@ extends Control
 var is_active: bool = false
 
 
-func _ready() -> void:
-	set_active(false)
-
-
 func _unhandled_input(event: InputEvent) -> void:
 	if event.is_action_pressed("Pause"):
 		set_active(not is_active)

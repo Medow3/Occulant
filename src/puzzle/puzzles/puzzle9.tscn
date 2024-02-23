@@ -1,11 +1,11 @@
-[gd_scene load_steps=5 format=3 uid="uid://du4sjpx6opf6a"]
+[gd_scene load_steps=5 format=3 uid="uid://q43sk7j7d5y5"]
 
 [ext_resource type="Script" path="res://src/puzzle/puzzle.gd" id="1_dacpp"]
 [ext_resource type="TileSet" uid="uid://biq2c0ot54uig" path="res://src/resources/puzzle_tileset.tres" id="2_dhb4l"]
 [ext_resource type="PackedScene" uid="uid://cdpcdj7s5841v" path="res://src/player/player.tscn" id="3_7iape"]
 [ext_resource type="PackedScene" uid="uid://c550ra3vrymql" path="res://src/go_to_next_puzzle.tscn" id="4_61t7g"]
 
-[node name="puzzle8" type="Node2D"]
+[node name="puzzle9" type="Node2D"]
 script = ExtResource("1_dacpp")
 start_with_reflection_uses = 0
 
@@ -30,16 +30,6 @@ position = Vector2(20, 52)
 tilemap = NodePath("../TileMap")
 floor_tilemap = NodePath("../floorTileMap")
 
-[node name="Polygon2D" type="Polygon2D" parent="."]
-visible = false
-z_index = -1
-color = Color(0, 0, 0, 0.278431)
-polygon = PackedVector2Array(-569, -518, 857, -522, 855, 783, -561, 758)
-
 [node name="GoToNextPuzzle" parent="." instance=ExtResource("4_61t7g")]
 position = Vector2(120, 12)
-next_puzzle_path = "res://src/puzzle/puzzles/puzzle3.tscn"
-
-[connection signal="body_entered" from="TileMap/MirrorItem" to="TileMap/MirrorItem" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@229967" to="TileMap/@Area2D@229967" method="_on_body_entered"]
-[connection signal="body_entered" from="TileMap/@Area2D@229968" to="TileMap/@Area2D@229968" method="_on_body_entered"]
+next_puzzle_path = "res://src/puzzle/puzzles/puzzle10.tscn"
