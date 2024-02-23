@@ -33,3 +33,7 @@ floor_tilemap = NodePath("../floorTileMap")
 [node name="GoToNextPuzzle" parent="." instance=ExtResource("4_61t7g")]
 position = Vector2(120, 12)
 next_puzzle_path = "res://src/puzzle/puzzles/puzzle10.tscn"
+
+[connection signal="body_entered" from="TileMap/MirrorItem" to="TileMap/MirrorItem" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@60585" to="TileMap/@Area2D@60585" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@60586" to="TileMap/@Area2D@60586" method="_on_body_entered"]

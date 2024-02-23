@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://capq2gtqs28bg"]
+[gd_scene load_steps=5 format=3 uid="uid://dxhm08ghtp5dl"]
 
 [ext_resource type="Script" path="res://src/puzzle/puzzle.gd" id="1_ksxli"]
 [ext_resource type="TileSet" uid="uid://biq2c0ot54uig" path="res://src/resources/puzzle_tileset.tres" id="2_rq3ys"]
@@ -38,4 +38,4 @@ polygon = PackedVector2Array(-569, -518, 857, -522, 855, 783, -561, 758)
 
 [node name="GoToNextPuzzle" parent="." instance=ExtResource("4_ea6o0")]
 position = Vector2(120, 12)
-next_puzzle_path = "res://src/puzzle/puzzles/puzzle3.tscn"
+next_puzzle_path = "res://src/puzzle/puzzles/puzzle9.tscn"

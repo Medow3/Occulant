@@ -1,4 +1,4 @@
-[gd_scene load_steps=5 format=3 uid="uid://cqqbkwqmmu2w8"]
+[gd_scene load_steps=5 format=3 uid="uid://o0m32wkwk8ev"]
 
 [ext_resource type="Script" path="res://src/puzzle/puzzle.gd" id="1_dm4qd"]
 [ext_resource type="TileSet" uid="uid://biq2c0ot54uig" path="res://src/resources/puzzle_tileset.tres" id="2_fgjvu"]
