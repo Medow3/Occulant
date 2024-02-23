@@ -1,0 +1,31 @@
+[gd_scene load_steps=5 format=3 uid="uid://c550ra3vrymql"]
+
+[ext_resource type="Script" path="res://src/go_to_next_puzzle.gd" id="1_jaqb3"]
+[ext_resource type="Texture2D" uid="uid://cun32xsvcc41" path="res://assets/art/summoning_circle.png" id="2_sdcau"]
+[ext_resource type="PackedScene" uid="uid://d3olk54tlpb2" path="res://src/items/pulseing_light.tscn" id="3_krnqg"]
+
+[sub_resource type="CircleShape2D" id="CircleShape2D_ylpq8"]
+radius = 4.0
+
+[node name="GoToNextPuzzle" type="Area2D"]
+script = ExtResource("1_jaqb3")
+
+[node name="Sprite2D" type="Sprite2D" parent="."]
+z_index = -1
+position = Vector2(4, 4)
+texture = ExtResource("2_sdcau")
+
+[node name="CollisionShape2D" type="CollisionShape2D" parent="."]
+position = Vector2(4, 4)
+shape = SubResource("CircleShape2D_ylpq8")
+
+[node name="pulseing_light" parent="." instance=ExtResource("3_krnqg")]
+position = Vector2(4, 4)
+scale = Vector2(1.33333, 1.33333)
+color = Color(1, 0, 0, 1)
+texture = ExtResource("2_sdcau")
+energy_min = 0.5
+texture_scale_min = 0.5
+delay = 0.0
+
+[connection signal="body_entered" from="." to="." method="_on_body_entered"]

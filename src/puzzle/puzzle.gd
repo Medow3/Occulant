@@ -38,8 +38,8 @@ func _physics_process(delta):
 	if Input.is_action_just_pressed("Undo"):
 		if len(_history) > 0 and current_place_in_history > 0:
 			current_place_in_history -= 1
-			_load_state(_history[current_place_in_history])
+			Fade.fade_out_call_func_fade_in(_load_state, [_history[current_place_in_history]], 0.1)
 	elif Input.is_action_just_pressed("Redo"):
 		if len(_history) > 0 and current_place_in_history < len(_history):
-			_load_state(_history[current_place_in_history])
+			Fade.fade_out_call_func_fade_in(_load_state, [_history[current_place_in_history]], 0.1)
 			current_place_in_history += 1
