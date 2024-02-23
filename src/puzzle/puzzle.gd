@@ -28,7 +28,6 @@ func _save_state() -> void:
 
 
 func _load_state(state: Dictionary) -> void:
-	print("load")
 	SFX.play_sfx(undo_sfx)
 	player.global_position = state["player_global_position"]
 	tilemap.clear()
