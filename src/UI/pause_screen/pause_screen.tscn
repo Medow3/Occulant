@@ -3,10 +3,10 @@
 [ext_resource type="Script" path="res://src/UI/pause_screen/pause_screen.gd" id="1_cc1gf"]
 [ext_resource type="Script" path="res://src/resources/SFX/single_SFX_data.gd" id="2_e5dkt"]
 [ext_resource type="FontFile" uid="uid://mu7uis4wp445" path="res://assets/fonts/13487095304649/BLKCHCRY.TTF" id="2_g8q23"]
-[ext_resource type="StyleBox" uid="uid://crnai1k8oxxie" path="res://src/resources/button_normal_style_box_flat.tres" id="3_gnpy6"]
-[ext_resource type="AudioStream" uid="uid://clx2fdo2rtbn5" path="res://assets/sfx/menu/menu_back.ogg" id="3_mxcii"]
+[ext_resource type="StyleBox" path="res://src/resources/button_normal_style_box_flat.tres" id="3_gnpy6"]
+[ext_resource type="AudioStream" uid="uid://gln374ad1ej1" path="res://assets/sfx/menu/menu_back.ogg" id="3_mxcii"]
 [ext_resource type="Script" path="res://src/resources/SFX/SFX_data.gd" id="4_88mct"]
-[ext_resource type="StyleBox" uid="uid://41q55rsqq25l" path="res://src/resources/button_hover_style_box_flat.tres" id="4_w5eho"]
+[ext_resource type="StyleBox" path="res://src/resources/button_hover_style_box_flat.tres" id="4_w5eho"]
 [ext_resource type="Script" path="res://src/UI/button_click.gd" id="5_8je1b"]
 
 [sub_resource type="Resource" id="Resource_vugvn"]
