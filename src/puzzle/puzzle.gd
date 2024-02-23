@@ -4,6 +4,7 @@ class_name Puzzle extends Node
 
 @onready var player: Player = $Player
 @onready var tilemap: TileMap = $TileMap
+@onready var undo_sfx: SFXData = load("res://src/resources/cutsom_sfx/undo_sfx_data.tres")
 
 var _history: Array[Dictionary] = []
 var current_place_in_history: int = 0
@@ -27,6 +28,7 @@ func _save_state() -> void:
 
 
 func _load_state(state: Dictionary) -> void:
+	SFX.play_sfx(undo_sfx)
 	tilemap.clear()
 	tilemap.set_pattern(0, state["top_left_tile_coord"], state["tiles"])
 	player.global_position = state["player_global_position"]

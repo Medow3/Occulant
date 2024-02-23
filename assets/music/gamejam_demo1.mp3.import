@@ -12,7 +12,7 @@ dest_files=["res://.godot/imported/gamejam_demo1.mp3-a63fd2efc1c98f145b1bf2f8472
 
 [params]
 
-loop=false
+loop=true
 loop_offset=0
 bpm=0
 beat_count=0

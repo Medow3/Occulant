@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://ppwn5jrs1m3r"]
+[gd_scene load_steps=6 format=3 uid="uid://ppwn5jrs1m3r"]
 
 [ext_resource type="Script" path="res://src/UI/pause_screen/pause_screen.gd" id="1_cc1gf"]
 [ext_resource type="FontFile" uid="uid://mu7uis4wp445" path="res://assets/fonts/13487095304649/BLKCHCRY.TTF" id="2_g8q23"]
 [ext_resource type="StyleBox" uid="uid://crnai1k8oxxie" path="res://src/resources/button_normal_style_box_flat.tres" id="3_gnpy6"]
 [ext_resource type="StyleBox" uid="uid://41q55rsqq25l" path="res://src/resources/button_hover_style_box_flat.tres" id="4_w5eho"]
+[ext_resource type="Script" path="res://src/UI/button_click.gd" id="5_8je1b"]
 
 [node name="pause_screen" type="Control"]
 process_mode = 3
@@ -57,6 +58,7 @@ theme_override_styles/hover = ExtResource("4_w5eho")
 theme_override_styles/pressed = ExtResource("3_gnpy6")
 theme_override_styles/focus = ExtResource("3_gnpy6")
 text = "Skip Level"
+script = ExtResource("5_8je1b")
 
 [node name="main_menu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -67,6 +69,7 @@ theme_override_styles/hover = ExtResource("4_w5eho")
 theme_override_styles/pressed = ExtResource("3_gnpy6")
 theme_override_styles/focus = ExtResource("3_gnpy6")
 text = "Main Menu"
+script = ExtResource("5_8je1b")
 
 [node name="contineu" type="Button" parent="VBoxContainer"]
 layout_mode = 2
@@ -77,6 +80,7 @@ theme_override_styles/hover = ExtResource("4_w5eho")
 theme_override_styles/pressed = ExtResource("3_gnpy6")
 theme_override_styles/focus = ExtResource("3_gnpy6")
 text = "Continue"
+script = ExtResource("5_8je1b")
 
 [connection signal="pressed" from="VBoxContainer/skip" to="." method="_on_skip_pressed"]
 [connection signal="pressed" from="VBoxContainer/main_menu" to="." method="_on_main_menu_pressed"]

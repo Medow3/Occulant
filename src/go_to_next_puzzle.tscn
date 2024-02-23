@@ -1,14 +1,95 @@
-[gd_scene load_steps=5 format=3 uid="uid://c550ra3vrymql"]
+[gd_scene load_steps=14 format=3 uid="uid://c550ra3vrymql"]
 
 [ext_resource type="Script" path="res://src/go_to_next_puzzle.gd" id="1_jaqb3"]
+[ext_resource type="Script" path="res://src/resources/SFX/single_SFX_data.gd" id="2_7gla6"]
 [ext_resource type="Texture2D" uid="uid://cun32xsvcc41" path="res://assets/art/summoning_circle.png" id="2_sdcau"]
+[ext_resource type="AudioStream" uid="uid://dva4dy52xdcfb" path="res://assets/sfx/reflect_mechanic/level_complete_1.ogg" id="3_2oblp"]
 [ext_resource type="PackedScene" uid="uid://d3olk54tlpb2" path="res://src/items/pulseing_light.tscn" id="3_krnqg"]
+[ext_resource type="AudioStream" uid="uid://cxm3eyrx2mmx6" path="res://assets/sfx/reflect_mechanic/level_complete_2.ogg" id="4_xc1ot"]
+[ext_resource type="AudioStream" uid="uid://d2xes8b7q0jwe" path="res://assets/sfx/reflect_mechanic/level_complete_3.ogg" id="5_5ro6n"]
+[ext_resource type="Script" path="res://src/resources/SFX/SFX_data.gd" id="6_g56r3"]
+
+[sub_resource type="Resource" id="Resource_7p6x3"]
+script = ExtResource("2_7gla6")
+sound_file = ExtResource("3_2oblp")
+pitch_scale = 1.0
+pitch_random = 0.02
+use_custom_sfx_volume = true
+custom_volume = 1.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_mkk8q"]
+script = ExtResource("2_7gla6")
+sound_file = ExtResource("4_xc1ot")
+pitch_scale = 1.0
+pitch_random = 0.02
+use_custom_sfx_volume = true
+custom_volume = 1.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_vaxu5"]
+script = ExtResource("2_7gla6")
+sound_file = ExtResource("5_5ro6n")
+pitch_scale = 1.0
+pitch_random = 0.02
+use_custom_sfx_volume = true
+custom_volume = 1.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_y7xj2"]
+script = ExtResource("6_g56r3")
+SFX_pool = Array[ExtResource("2_7gla6")]([SubResource("Resource_7p6x3"), SubResource("Resource_mkk8q"), SubResource("Resource_vaxu5")])
+SFX_pool_weights = Array[float]([1.0, 1.0, 1.0])
+prevent_same_sound_twice_in_a_row = true
 
 [sub_resource type="CircleShape2D" id="CircleShape2D_ylpq8"]
 radius = 4.0
 
 [node name="GoToNextPuzzle" type="Area2D" groups=["Puzzle End"]]
 script = ExtResource("1_jaqb3")
+win_sfx = SubResource("Resource_y7xj2")
 
 [node name="Sprite2D" type="Sprite2D" parent="."]
 z_index = -1

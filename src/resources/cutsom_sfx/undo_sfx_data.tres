@@ -1,0 +1,58 @@
+[gd_resource type="Resource" script_class="SFXData" load_steps=7 format=3 uid="uid://ckbdpn3sw3gie"]
+
+[ext_resource type="Script" path="res://src/resources/SFX/SFX_data.gd" id="1_cy0xq"]
+[ext_resource type="Script" path="res://src/resources/SFX/single_SFX_data.gd" id="1_gy5jq"]
+[ext_resource type="AudioStream" uid="uid://cj4s623oykhtn" path="res://assets/sfx/reflect_mechanic/mirror_flip_undo_1.ogg" id="2_ekl0k"]
+[ext_resource type="AudioStream" uid="uid://s0jgalv33gud" path="res://assets/sfx/reflect_mechanic/mirror_flip_undo_2.ogg" id="3_tupde"]
+
+[sub_resource type="Resource" id="Resource_08hdw"]
+script = ExtResource("1_gy5jq")
+sound_file = ExtResource("2_ekl0k")
+pitch_scale = 1.0
+pitch_random = 0.05
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_vvr76"]
+script = ExtResource("1_gy5jq")
+sound_file = ExtResource("3_tupde")
+pitch_scale = 1.0
+pitch_random = 0.05
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[resource]
+script = ExtResource("1_cy0xq")
+SFX_pool = Array[ExtResource("1_gy5jq")]([SubResource("Resource_08hdw"), SubResource("Resource_vvr76")])
+SFX_pool_weights = Array[float]([1.0, 1.0])
+prevent_same_sound_twice_in_a_row = true

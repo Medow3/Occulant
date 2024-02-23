@@ -1,4 +1,4 @@
-[gd_scene load_steps=61 format=3 uid="uid://cdpcdj7s5841v"]
+[gd_scene load_steps=65 format=3 uid="uid://cdpcdj7s5841v"]
 
 [ext_resource type="Script" path="res://src/player/player.gd" id="1_br3ru"]
 [ext_resource type="Script" path="res://src/resources/SFX/single_SFX_data.gd" id="2_aeo80"]
@@ -17,9 +17,11 @@
 [ext_resource type="AudioStream" uid="uid://f1t6yesdgtok" path="res://assets/sfx/reflect_mechanic/mirror_flip_6.ogg" id="8_f8qjs"]
 [ext_resource type="Texture2D" uid="uid://ckb7q4bh1hytt" path="res://assets/art/asset_packs/Minifantasy_Dungeon_v2.2_Free_Version/Minifantasy_Dungeon_Assets/Characters/Human/Idle.png" id="8_ujmx4"]
 [ext_resource type="AudioStream" uid="uid://b8wnpwp6t62co" path="res://assets/sfx/reflect_mechanic/mirror_flip_7.ogg" id="9_nnu3u"]
-[ext_resource type="AudioStream" uid="uid://pp171rapy2ps" path="res://assets/sfx/footstep_test2.ogg" id="11_n8pwi"]
+[ext_resource type="AudioStream" uid="uid://cbte4g8tajlk6" path="res://assets/sfx/footstep_1.ogg" id="11_r1ilg"]
 [ext_resource type="AudioStream" uid="uid://ct7vkvaoo1d0n" path="res://assets/sfx/reflect_mechanic/mirror_view_loop.ogg" id="12_57xky"]
+[ext_resource type="AudioStream" uid="uid://kb42und6vimx" path="res://assets/sfx/footstep_2.ogg" id="12_hawdk"]
 [ext_resource type="AudioStream" uid="uid://drauu8wt33mem" path="res://assets/sfx/reflect_mechanic/mirror_view_start.ogg" id="13_e6x2h"]
+[ext_resource type="AudioStream" uid="uid://b3t8fr5m3chvg" path="res://assets/sfx/footstep_3.ogg" id="13_mbw0a"]
 [ext_resource type="PackedScene" uid="uid://ppwn5jrs1m3r" path="res://src/UI/pause_screen/pause_screen.tscn" id="17_pr2fb"]
 [ext_resource type="TileSet" uid="uid://domg58cay67u3" path="res://src/resources/preview_tileset.tres" id="19_r0xtv"]
 [ext_resource type="Script" path="res://src/player/playerAnimationTree.gd" id="21_xa5p7"]
@@ -193,9 +195,55 @@ prevent_same_sound_twice_in_a_row = true
 
 [sub_resource type="Resource" id="Resource_jdv1j"]
 script = ExtResource("2_aeo80")
-sound_file = ExtResource("11_n8pwi")
+sound_file = ExtResource("11_r1ilg")
 pitch_scale = 1.0
-pitch_random = 0.2
+pitch_random = 0.04
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_f302i"]
+script = ExtResource("2_aeo80")
+sound_file = ExtResource("12_hawdk")
+pitch_scale = 1.0
+pitch_random = 0.04
+use_custom_sfx_volume = false
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_uepxu"]
+script = ExtResource("2_aeo80")
+sound_file = ExtResource("13_mbw0a")
+pitch_scale = 1.0
+pitch_random = 0.04
 use_custom_sfx_volume = false
 custom_volume = 0.0
 uses_environmental_effects_bus = true
@@ -216,8 +264,8 @@ panning_strength = 1.0
 
 [sub_resource type="Resource" id="Resource_lxrag"]
 script = ExtResource("2_c6n6l")
-SFX_pool = Array[ExtResource("2_aeo80")]([SubResource("Resource_jdv1j")])
-SFX_pool_weights = Array[float]([1.0])
+SFX_pool = Array[ExtResource("2_aeo80")]([SubResource("Resource_jdv1j"), SubResource("Resource_f302i"), SubResource("Resource_uepxu")])
+SFX_pool_weights = Array[float]([1.0, 1.0, 1.0])
 prevent_same_sound_twice_in_a_row = true
 
 [sub_resource type="Resource" id="Resource_gaprq"]
