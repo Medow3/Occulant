@@ -2,11 +2,11 @@
 
 [ext_resource type="Script" path="res://src/resources/SFX/SFX_data.gd" id="1_5pa1c"]
 [ext_resource type="Script" path="res://src/resources/SFX/single_SFX_data.gd" id="1_njjlk"]
-[ext_resource type="AudioStream" uid="uid://ddmg5bxjy36dk" path="res://assets/sfx/footstep_4.ogg" id="2_aw0mb"]
+[ext_resource type="AudioStream" uid="uid://cxh7ayeovrocu" path="res://assets/sfx/menu/menu_scroll.ogg" id="2_7y0us"]
 
 [sub_resource type="Resource" id="Resource_80t4s"]
 script = ExtResource("1_njjlk")
-sound_file = ExtResource("2_aw0mb")
+sound_file = ExtResource("2_7y0us")
 pitch_scale = 1.0
 pitch_random = 0.1
 use_custom_sfx_volume = false

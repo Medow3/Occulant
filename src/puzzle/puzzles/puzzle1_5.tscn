@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://bfmr72ge1rfhg"]
+[gd_scene load_steps=6 format=3 uid="uid://bfmr72ge1rfhg"]
 
 [ext_resource type="Script" path="res://src/puzzle/puzzle.gd" id="1_rvkrk"]
 [ext_resource type="TileSet" uid="uid://biq2c0ot54uig" path="res://src/resources/puzzle_tileset.tres" id="2_sffyj"]
 [ext_resource type="PackedScene" uid="uid://cdpcdj7s5841v" path="res://src/player/player.tscn" id="3_x7vss"]
 [ext_resource type="PackedScene" uid="uid://c550ra3vrymql" path="res://src/go_to_next_puzzle.tscn" id="4_oqdx5"]
+[ext_resource type="PackedScene" uid="uid://q0wc4hpplv0" path="res://src/UI/tutorial_label.tscn" id="5_w8om0"]
 
 [node name="puzzle1_5" type="Node2D"]
 script = ExtResource("1_rvkrk")
@@ -29,3 +30,10 @@ floor_tilemap = NodePath("../floorTileMap2")
 [node name="GoToNextPuzzle" parent="." instance=ExtResource("4_oqdx5")]
 position = Vector2(24, 64)
 next_puzzle_path = "res://src/puzzle/puzzles/puzzle2.tscn"
+
+[node name="tutorial_label" parent="." instance=ExtResource("5_w8om0")]
+offset_left = -36.0
+offset_top = 8.0
+offset_right = 3.0
+offset_bottom = 38.0
+text = "You can reflect both horizontally and vertically"

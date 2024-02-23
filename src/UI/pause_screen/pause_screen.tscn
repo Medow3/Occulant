@@ -1,13 +1,46 @@
-[gd_scene load_steps=6 format=3 uid="uid://ppwn5jrs1m3r"]
+[gd_scene load_steps=11 format=3 uid="uid://ppwn5jrs1m3r"]
 
 [ext_resource type="Script" path="res://src/UI/pause_screen/pause_screen.gd" id="1_cc1gf"]
+[ext_resource type="Script" path="res://src/resources/SFX/single_SFX_data.gd" id="2_e5dkt"]
 [ext_resource type="FontFile" uid="uid://mu7uis4wp445" path="res://assets/fonts/13487095304649/BLKCHCRY.TTF" id="2_g8q23"]
 [ext_resource type="StyleBox" uid="uid://crnai1k8oxxie" path="res://src/resources/button_normal_style_box_flat.tres" id="3_gnpy6"]
+[ext_resource type="AudioStream" uid="uid://clx2fdo2rtbn5" path="res://assets/sfx/menu/menu_back.ogg" id="3_mxcii"]
+[ext_resource type="Script" path="res://src/resources/SFX/SFX_data.gd" id="4_88mct"]
 [ext_resource type="StyleBox" uid="uid://41q55rsqq25l" path="res://src/resources/button_hover_style_box_flat.tres" id="4_w5eho"]
 [ext_resource type="Script" path="res://src/UI/button_click.gd" id="5_8je1b"]
 
+[sub_resource type="Resource" id="Resource_vugvn"]
+script = ExtResource("2_e5dkt")
+sound_file = ExtResource("3_mxcii")
+pitch_scale = 1.0
+pitch_random = 0.1
+use_custom_sfx_volume = true
+custom_volume = 0.0
+uses_environmental_effects_bus = true
+bus_override = ""
+custom_effects_list = Array[AudioEffect]([])
+do_fade_in = false
+fade_in_trans = 1
+fade_in_ease = 0
+fade_in_duration = 0.1
+do_fade_out = false
+fade_out_trans = 1
+fade_out_ease = 0
+fade_out_duration = 0.1
+area_mask = 1
+attenuation = 1.0
+max_distance = 2000.0
+panning_strength = 1.0
+
+[sub_resource type="Resource" id="Resource_tlx2s"]
+script = ExtResource("4_88mct")
+SFX_pool = Array[ExtResource("2_e5dkt")]([SubResource("Resource_vugvn")])
+SFX_pool_weights = Array[float]([1.0])
+prevent_same_sound_twice_in_a_row = true
+
 [node name="pause_screen" type="Control"]
 process_mode = 3
+visible = false
 layout_mode = 3
 anchors_preset = 15
 anchor_right = 1.0
@@ -16,6 +49,7 @@ grow_horizontal = 2
 grow_vertical = 2
 mouse_filter = 2
 script = ExtResource("1_cc1gf")
+open_close_sfx = SubResource("Resource_tlx2s")
 
 [node name="ColorRect" type="ColorRect" parent="."]
 layout_mode = 1

@@ -1,0 +1,17 @@
+[gd_scene load_steps=2 format=3 uid="uid://q0wc4hpplv0"]
+
+[ext_resource type="FontFile" uid="uid://mu7uis4wp445" path="res://assets/fonts/13487095304649/BLKCHCRY.TTF" id="1_deyl5"]
+
+[node name="tutorial_label" type="Label"]
+z_index = 6
+offset_left = 64.0
+offset_top = 12.0
+offset_right = 103.0
+offset_bottom = 34.0
+theme_override_colors/font_color = Color(1, 1, 1, 1)
+theme_override_colors/font_outline_color = Color(0, 0, 0, 1)
+theme_override_constants/outline_size = 2
+theme_override_fonts/font = ExtResource("1_deyl5")
+theme_override_font_sizes/font_size = 6
+horizontal_alignment = 1
+autowrap_mode = 3

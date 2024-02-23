@@ -1,9 +1,10 @@
-[gd_scene load_steps=5 format=3 uid="uid://j0mnm2w7evt3"]
+[gd_scene load_steps=6 format=3 uid="uid://j0mnm2w7evt3"]
 
 [ext_resource type="Script" path="res://src/puzzle/puzzle.gd" id="1_1qebd"]
 [ext_resource type="TileSet" uid="uid://biq2c0ot54uig" path="res://src/resources/puzzle_tileset.tres" id="2_aoi3w"]
 [ext_resource type="PackedScene" uid="uid://cdpcdj7s5841v" path="res://src/player/player.tscn" id="3_3dkmy"]
 [ext_resource type="PackedScene" uid="uid://c550ra3vrymql" path="res://src/go_to_next_puzzle.tscn" id="4_3hat5"]
+[ext_resource type="PackedScene" uid="uid://q0wc4hpplv0" path="res://src/UI/tutorial_label.tscn" id="5_a6dsv"]
 
 [node name="puzzle2" type="Node2D"]
 script = ExtResource("1_1qebd")
@@ -29,3 +30,5 @@ floor_tilemap = NodePath("../floorTileMap2")
 [node name="GoToNextPuzzle" parent="." instance=ExtResource("4_3hat5")]
 position = Vector2(24, 88)
 next_puzzle_path = "res://src/puzzle/puzzles/puzzle3.tscn"
+
+[node name="tutorial_label" parent="." instance=ExtResource("5_a6dsv")]

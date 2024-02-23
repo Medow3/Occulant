@@ -1,5 +1,7 @@
 extends Control
 
+@export var open_close_sfx: SFXData
+
 var is_active: bool = false
 
 
@@ -13,6 +15,7 @@ func _unhandled_input(event: InputEvent) -> void:
 
 
 func set_active(new_value: bool) -> void:
+	SFX.play_sfx(open_close_sfx)
 	get_tree().paused = new_value
 	visible = new_value
 	is_active = new_value
