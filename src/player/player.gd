@@ -99,6 +99,12 @@ func update_reflection_preview() -> void:
 		square.visible = true
 		square.global_position = tilemap.map_to_local(player_map_grid_cords)
 		square.material.set_shader_parameter("warp_vertically", reflection_direction.y != 0)
+		# var tile_size = tilemap.tile_set.tile_size.x
+		# var nearest_tile_center_local = tilemap.map_to_local(player_map_grid_cords) + Vector2(tile_size / 2.0, -tile_size / 2.0)
+		# var center_to_player: Vector2 = (global_position - nearest_tile_center_local)
+		# var square_length_local = tile_size * (reflection_tile_distance * 2 + 1)
+		# var center_to_player_square_space: Vector2 = Vector2(center_to_player.x / square_length_local, -center_to_player.y / square_length_local)
+		# square.material.set_shader_parameter("player_center_offset", center_to_player_square_space)
 		
 		preview_tilemap.visible = true
 		preview_tilemap_floor.visible = true

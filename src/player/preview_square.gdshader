@@ -3,9 +3,9 @@ shader_type canvas_item;
 uniform sampler2D Screen : hint_screen_texture;
 uniform sampler2D warp_tex : source_color, repeat_enable;
 
-uniform vec2 warp_tex_scale = vec2(1.0, 1.0);
+uniform float warp_tex_scale = 1.0;
 uniform float warp_intensity = 1.0;
-uniform vec2 warp_time_scale = vec2(-.3, 0);
+uniform float warp_time_scale = -0.3;
 
 uniform float block_width = 0.45;
 uniform float lump_width = 0.5;
@@ -15,6 +15,8 @@ uniform float radial_fade_start = .1;
 uniform float radial_fade_width = .1;
 uniform vec4 border_color : source_color = vec4(0.3, 0.0, 0.0, 1.0);
 uniform vec4 mirror_line_color : source_color = vec4(0.8, 0.5, 0.5, 1.0);
+uniform vec2 player_center_offset = vec2(0.0);
+
 
 
 // Mathew's original modulate colour: 7a8aff17
@@ -35,7 +37,7 @@ float outline(vec2 pos, float start, float stop) {
 }
 
 float radial_fade(vec2 pos, float start, float width) {
-	float radius = distance(pos, vec2(0.5));
+	float radius = distance(pos, vec2(0.5) + player_center_offset);
 	if (radius < start) return 1.0;
 	if (radius > start + width) return 0.0;
 	return 0.5 * cos( PI / width * (radius - start) ) + 0.5;
@@ -63,7 +65,7 @@ float dividers(float direction, float spread, float width, float speed) {
 void fragment() {
 	
 	// Calculate warp value
-	vec4 warp_sampler = texture(warp_tex, (UV + TIME * warp_time_scale) * warp_tex_scale.x);
+	vec4 warp_sampler = texture(warp_tex, (UV + TIME * warp_time_scale) * warp_tex_scale);
 	float warp_val = (warp_sampler.x - 0.5) * 2.0 * warp_intensity / 100.0;
 	
 	float radial_fade_mask = (1.0 - radial_fade(UV,
@@ -72,14 +74,22 @@ void fragment() {
 		
 	float warp_mask = min(lump(UV.x), lump(UV.y)) * radial_fade_mask;
 	
-	float divs = dividers(warp_vertically ? UV.y : UV.x, 0.1, 0.02, 0.5);
-	
 	float ants = 0.5 * radial_fan(UV, 0.5 * TIME, 20.0) + 0.5 * radial_fan(UV, -.3 * TIME, 19.0);
-	ants *= outline(UV, 0.49, 0.50);
+	float border_mask = outline(UV, 0.49, 0.50);
+	ants *= border_mask;
+	
+	float divs = dividers(warp_vertically ? UV.y : UV.x, 0.1, 0.02, 0.5) *
+		radial_fade_mask * (1.0 - border_mask);
 	
 	float warp_dir = float(warp_vertically);
 	COLOR = texture(Screen, SCREEN_UV + 
 		vec2(warp_val * (1.0 - warp_dir), warp_val * warp_dir) * warp_mask)
 		+ vec4(ants, ants, ants, 0.0) * border_color
-		+ vec4(divs, divs, divs, 0.0) * mirror_line_color * radial_fade_mask;
+		+ vec4(divs, divs, divs, 0.0) * mirror_line_color;
+	
+	// Uncomment to preview noise
+	//COLOR = texture(warp_tex, (UV + TIME * warp_time_scale) * warp_tex_scale);
+	
+	//float t = radial_fade(UV , 0.05, 0.0);
+	//COLOR = vec4(t, t, t, t * .5);
 }
