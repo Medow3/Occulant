@@ -10,7 +10,7 @@ signal about_to_reflect
 @export var preview_loop: SFXData
 @export var preview_loop_start: SFXData
 
-@onready var mirror_line: Line2D = $mirror_line
+# @onready var mirror_line: Line2D = $mirror_line
 @onready var square: Sprite2D = $square
 @onready var animation_handler = $animation_handler
 @onready var preview_tilemap: TileMap = $preview_tilemap
@@ -91,19 +91,20 @@ func update_reflection_preview() -> void:
 		if reflection_direction.x != 0 and reflection_direction.y != 0:
 			reflection_direction.y = 0
 		
-		mirror_line.visible = true
+		# mirror_line.visible = true
 		var player_map_grid_cords: Vector2i = tilemap.local_to_map(global_position)
-		mirror_line.global_position = tilemap.map_to_local(player_map_grid_cords)
-		mirror_line.global_rotation = atan2(reflection_direction.y, reflection_direction.x)
+		# mirror_line.global_position = tilemap.map_to_local(player_map_grid_cords)
+		# mirror_line.global_rotation = atan2(reflection_direction.y, reflection_direction.x)
 		
 		square.visible = true
 		square.global_position = tilemap.map_to_local(player_map_grid_cords)
+		square.material.set_shader_parameter("warp_vertically", reflection_direction.y != 0)
 		
 		preview_tilemap.visible = true
 		preview_tilemap_floor.visible = true
 		preview_reflection()
 	else:
-		mirror_line.visible = false
+		# mirror_line.visible = false
 		square.visible = false
 		preview_tilemap.visible = false
 		preview_tilemap_floor.visible = false
