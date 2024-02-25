@@ -38,4 +38,8 @@ polygon = PackedVector2Array(-569, -518, 857, -522, 855, 783, -561, 758)
 
 [node name="GoToNextPuzzle" parent="." instance=ExtResource("4_ea6o0")]
 position = Vector2(120, 12)
-next_puzzle_path = "res://src/puzzle/puzzles/puzzle9.tscn"
+next_puzzle_path = "res://src/puzzle/puzzles/puzzle10.tscn"
+
+[connection signal="body_entered" from="TileMap/MirrorItem" to="TileMap/MirrorItem" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@39038" to="TileMap/@Area2D@39038" method="_on_body_entered"]
+[connection signal="body_entered" from="TileMap/@Area2D@39039" to="TileMap/@Area2D@39039" method="_on_body_entered"]
